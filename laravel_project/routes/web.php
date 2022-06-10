@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CausesController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('indexx');
 });
 
 
-Route::get('/test' , [CategoryController::class, 'index']);
+Route::get('/causes' , [CausesController::class, 'index']);
 
 
 // registration
