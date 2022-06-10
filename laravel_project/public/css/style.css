@@ -7304,7 +7304,7 @@ a {
   color: #2F8F9D; }
   a:hover {
     text-decoration: none;
-    color: #f86f2d; }
+    color: #2F8F9D; }
 
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
@@ -8337,7 +8337,7 @@ textarea.form-control {
     .ftco-footer .block-21 .text .heading a {
       color: rgba(255, 255, 255, 0.8); }
       .ftco-footer .block-21 .text .heading a:hover, .ftco-footer .block-21 .text .heading a:active, .ftco-footer .block-21 .text .heading a:focus {
-        color: #f86f2d; }
+        color: white; }
   .ftco-footer .block-21 .text .meta > div {
     display: inline-block;
     font-size: 12px;
