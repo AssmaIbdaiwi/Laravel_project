@@ -12,8 +12,8 @@ class Product extends Model
     {
       return $this->belongsTo(Category::class);
     }
-    public function item()
+    public function order()
 {
-   return $this->hasOne(Donation_Receptor::class);
+   return $this->hasMany(Order::class);
 }
 }
