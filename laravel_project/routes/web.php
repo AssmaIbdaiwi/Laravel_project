@@ -30,4 +30,4 @@ Route::get("/search", [CausesController::class , 'search']);
 // registration
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'indexx'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
