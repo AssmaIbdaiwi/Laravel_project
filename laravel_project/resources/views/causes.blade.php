@@ -1,6 +1,8 @@
 
      @extends('master') 
      @section('content')  
+
+
     <div class="hero-wrap" style="background-image: url('images/bg_5.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -14,12 +16,25 @@
     </div>
 
     
-    <section class="ftco-section">
-      <div class="container">
+    <section class="ftco-section" style="overflow: hidden;" id="product_section">
+      <div class="row">
+        <div class="col-2">
+          <div class="container">
+            <div class="list-group list-group-light">
+              <a class="list-group-item list-group-item-action px-3 border-0 disabled mt-3">Categories</a>
+            @foreach ($categories as $category)
+              <a href="/causes/{{$category->id}}" class="list-group-item list-group-item-action px-3 border-0" aria-current="true">
+                {{ $category->category_name }}</a>
+            @endforeach
+            </div>
+          </div>
+        </div>
+        <div class="col-10">
+          <div class="container">
           <div class="row">
             @if (!isset($_GET["page"]))
             @foreach ( $pages[0] as $product )
-            <div class="col-md-4 ftco-animate">
+            <div class="col-md-4 ftco-animate mt-3">
               <div class="cause-entry">
                 <a class="img" style="background-image: url(images/{{ $product->item_image }});"></a>
                 <div class="text p-3 p-md-4">
@@ -30,42 +45,56 @@
                 </div>
               </div>
             </div>
-          @endforeach
-          @else
-          @foreach ($pages[$_GET["page"] - 1] as $product)
-          <div class="col-md-4 ftco-animate">
-              <div class="cause-entry">
-                <a class="img" style="background-image: url(images/{{ $product->item_image }});"></a>
-                <div class="text p-3 p-md-4">
-                  <h3>{{ $product->item_name }}</h3>
-                  <p>{{ $product->item_description }}</p>
-                  <span class="donation-time mb-3 d-block"></span>
-                  <span class="fund-raised d-block d-flex justify-content-center"><a href=""><button type="button" class="btn btn-info">Info</button></a></span>
+            @endforeach
+            @else
+            @foreach ($pages[$_GET["page"] - 1] as $product)
+            <div class="col-md-4 ftco-animate mt-3">
+                <div class="cause-entry">
+                  <a class="img" style="background-image: url(images/{{ $product->item_image }});"></a>
+                  <div class="text p-3 p-md-4">
+                    <h3>{{ $product->item_name }}</h3>
+                    <p>{{ $product->item_description }}</p>
+                    <span class="donation-time mb-3 d-block"></span>
+                    <span class="fund-raised d-block d-flex justify-content-center"><a href=""><button type="button" class="btn btn-info">Info</button></a></span>
+                  </div>
                 </div>
               </div>
-            </div>
-          @endforeach
-          @endif
+            @endforeach
+            @endif
         </div>
 
         <div class="row mt-5">
           <div class="col text-center">
             <div class="block-27">
               <ul>
+                @if (isset($_GET["page"]))
                 <li style="display:none;"><a href=""></a></li>
                 <li><a href="/causes?page=@if($_GET["page"] - 1 == 0)1
-                @else{{$_GET["page"]-1}}@endif">&lt;</a></li>
+                @else{{$_GET["page"]-1}}@endif#product_section">&lt;</a></li>
                 @for ($i = 1; $i <= $pages_number; $i++)
-                <li><span><a href="/causes?page={{ $i }}">{{ $i }}</a></span></li>
+                <li><span><a href="/causes?page={{ $i }}#product_section">{{ $i }}</a></span></li>
                 @endfor
                 <li><a href="/causes?page=@if($_GET["page"] + 1 == $pages_number + 1){{$pages_number}}
-                  @else{{$_GET["page"]+1}}@endif">&gt;</a></li>
+                  @else{{$_GET["page"]+1}}@endif#product_section">&gt;</a></li>
+                @else
+                <li style="display:none;"><a href=""></a></li>
+                <li><a href="/causes?page=1#product_section">&lt;</a></li>
+                @for ($i = 1; $i <= $pages_number; $i++)
+                <li><span><a href="/causes?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                @endfor
+                <li><a href="/causes?page=2#product_section">&gt;</a></li>
+                @endif
               </ul>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    </div>
+      
     </section>
 		
 
     @endsection
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></script>
