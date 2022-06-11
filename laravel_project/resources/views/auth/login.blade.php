@@ -17,7 +17,7 @@
                 <img src="https://lawguideline.org/wp-content/uploads/2021/08/Donate-Used-Medical-Equipment-Near-Me.jpg"
                   alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height:640px;" />
               </div>
-              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background: hsla(175, 77%, 88%, 0.55)">
                 <div class="card-body p-4 p-lg-5 text-black">
   
                   <form method="POST" action="{{ route('login') }}">
