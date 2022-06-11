@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 
 Route::get('/causes' , [CausesController::class, 'index']);
+Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory']);
 
 
 // registration
