@@ -8186,7 +8186,7 @@ h1, h2, h3, h4, h5,
         display: none; } }
 
 .form-control {
-  height: 58px !important;
+  height: 58px;
   background: #fff !important;
   color: #000 !important;
   font-size: 18px;

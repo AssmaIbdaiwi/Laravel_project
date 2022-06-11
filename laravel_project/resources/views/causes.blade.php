@@ -1,9 +1,9 @@
 
-     @extends('master') 
-     @section('content')  
+      @extends('master') 
+      @section('content')  
 
 
-    <div class="hero-wrap" style="background-image: url('images/bg_5.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image:url('{{ asset('images/bg_5.jpg') }}');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -15,20 +15,28 @@
       </div>
     </div>
 
-    
-    <section class="ftco-section" style="overflow: hidden;" id="product_section">
+    <form class="form-inline" style="display: flex;justify-content: center;align-items: center;margin-top: 5%;" action="/search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="height: auto" name="search">
+      <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
+    </form>
+    <section class="ftco-section" style="overflow: hidden; padding: 2em 0;" id="product_section">
       <div class="row">
         <div class="col-2">
           <div class="container">
             <div class="list-group list-group-light">
               <a class="list-group-item list-group-item-action px-3 border-0 disabled mt-3">Categories</a>
+              <a href="/causes#product_section" class="list-group-item list-group-item-action px-3 border-0" aria-current="true">
+                All</a>
             @foreach ($categories as $category)
-              <a href="/causes/{{$category->id}}" class="list-group-item list-group-item-action px-3 border-0" aria-current="true">
+              <a href="/causes/{{$category->id}}#product_section" class="list-group-item list-group-item-action px-3 border-0" aria-current="true">
                 {{ $category->category_name }}</a>
             @endforeach
             </div>
           </div>
         </div>
+
+        @if (count($pages) != 0)
+          
         <div class="col-10">
           <div class="container">
           <div class="row">
@@ -36,7 +44,7 @@
             @foreach ( $pages[0] as $product )
             <div class="col-md-4 ftco-animate mt-3">
               <div class="cause-entry">
-                <a class="img" style="background-image: url(images/{{ $product->item_image }});"></a>
+                <a class="img" style="background-image: url('{{ asset('images/' .$product->item_image) }}');"></a>
                 <div class="text p-3 p-md-4">
                   <h3>{{ $product->item_name }}</h3>
                   <p>{{ $product->item_description }}</p>
@@ -50,12 +58,12 @@
             @foreach ($pages[$_GET["page"] - 1] as $product)
             <div class="col-md-4 ftco-animate mt-3">
                 <div class="cause-entry">
-                  <a class="img" style="background-image: url(images/{{ $product->item_image }});"></a>
+                  <a class="img" style="background-image: url('{{ asset('images/' .$product->item_image) }}');"></a>
                   <div class="text p-3 p-md-4">
                     <h3>{{ $product->item_name }}</h3>
                     <p>{{ $product->item_description }}</p>
                     <span class="donation-time mb-3 d-block"></span>
-                    <span class="fund-raised d-block d-flex justify-content-center"><a href=""><button type="button" class="btn btn-info">Info</button></a></span>
+                    <span class="fund-raised d-block d-flex justify-content-center"><a href=""><button type="button" class="btn btn-info">Request</button></a></span>
                   </div>
                 </div>
               </div>
@@ -69,20 +77,20 @@
               <ul>
                 @if (isset($_GET["page"]))
                 <li style="display:none;"><a href=""></a></li>
-                <li><a href="/causes?page=@if($_GET["page"] - 1 == 0)1
+                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=@if($_GET["page"] - 1 == 0)1
                 @else{{$_GET["page"]-1}}@endif#product_section">&lt;</a></li>
                 @for ($i = 1; $i <= $pages_number; $i++)
-                <li><span><a href="/causes?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                <li><span><a href="{{ $_SERVER['REQUEST_URI'] }}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
                 @endfor
-                <li><a href="/causes?page=@if($_GET["page"] + 1 == $pages_number + 1){{$pages_number}}
+                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=@if($_GET["page"] + 1 == $pages_number + 1){{$pages_number}}
                   @else{{$_GET["page"]+1}}@endif#product_section">&gt;</a></li>
                 @else
                 <li style="display:none;"><a href=""></a></li>
-                <li><a href="/causes?page=1#product_section">&lt;</a></li>
+                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=1#product_section">&lt;</a></li>
                 @for ($i = 1; $i <= $pages_number; $i++)
-                <li><span><a href="/causes?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                <li><span><a href="{{ $_SERVER['REQUEST_URI'] }}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
                 @endfor
-                <li><a href="/causes?page=2#product_section">&gt;</a></li>
+                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=2#product_section">&gt;</a></li>
                 @endif
               </ul>
             </div>
@@ -90,6 +98,11 @@
         </div>
       </div>
     </div>
+    @else
+    <div class="col-10">
+      <h1>There is no Items in this category</h1>
+    </div>
+    @endif
     </div>
       
     </section>

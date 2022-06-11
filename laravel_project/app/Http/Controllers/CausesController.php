@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use LengthException;
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
-use LengthException;
-use Symfony\Component\HttpFoundation\Request;
 
 class CausesController extends Controller
 {
@@ -47,6 +47,20 @@ class CausesController extends Controller
         array_push($pages, array_slice($newpages , $i ,$i + $item_per_page));
         }
         return view("/causes" , compact('pages_number' , 'pages' , 'categories'));
+    }
+
+    public function search(Request $request){
+        $categories = Category::all();
+        $products = Product::where('item_name' , 'like' , '%' .$request["search"] .'%')->orWhere('item_description' , 'like' , '%' .$request["search"] .'%')->get();
+        $item_per_page = 6;
+        $product = (array)$products;
+        $product = $product["\x00*\x00items"];
+        $pages = array();
+        $pages_number = ceil(count($product) / $item_per_page);
+        for($i = 0; $i < count($product) ; $i +=$item_per_page){
+            array_push($pages, array_slice($product , $i ,2));
+            }
+            return view("/causes" , compact('pages_number' , 'pages' , 'categories'));
     }
     
 }
