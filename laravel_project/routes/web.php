@@ -1,6 +1,7 @@
 <?php
-
+use App\Http\Controllers\IndexxController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/indexx', function () {
     return view('indexx');
 });
+Route::get('/donation', function () {
+    return view('donation');
+});
+Route::get('/donate', function () {
+    return view('donate');
+});
+Route::get('/delivery', function () {
+    return view('delivery');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/profile', function () {
+    return view('profile');
+});
 
-
-
+Route::resource('indexx', IndexxController::class);
 
 
 // registration

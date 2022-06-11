@@ -38,20 +38,20 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="indexx.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="gallery.html" class="nav-link">Donations</a></li>
+          <li class="nav-item active"><a href="{{url('indexx')}}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{{url('donation')}}" class="nav-link">Donations</a></li>
           {{-- <li class="nav-item"><a href="causes.html" class="nav-link">Causes</a></li> --}}
-          <li class="nav-item"><a href="donate.html" class="nav-link">Donate</a></li>
-          <li class="nav-item"><a href="event.html" class="nav-link">Delivery Volunteering</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About us</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="{{url('donate')}}" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="{{url('delivery')}}" class="nav-link">Delivery Volunteering</a></li>
+          <li class="nav-item"><a href="{{url('about')}}" class="nav-link">About us</a></li>
+          <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              Profile
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Account</a>
-              <a class="dropdown-item" href="#signup">Login/Signup</a>
+              <a class="dropdown-item" href="{{url('profile')}}">Account</a>
+              <a class="dropdown-item" href="{{url('/')}}">Login/Signup</a>
               
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Logout</a> 
