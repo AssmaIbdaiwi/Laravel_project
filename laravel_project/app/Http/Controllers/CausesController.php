@@ -24,8 +24,8 @@ class CausesController extends Controller
         for($i = 0; $i < count($products) ; $i +=$item_per_page){
         array_push($pages, array_slice($product , $i ,$i + $item_per_page));
         }
-
-        return view("/causes" , compact('pages_number' , 'pages' , 'categories'));
+        $type = "index";
+        return view("/causes" , compact('pages_number' , 'pages' , 'categories' , 'type'));
     }
 
     public function ShowProductCategory(Category $category){
@@ -46,7 +46,9 @@ class CausesController extends Controller
         for($i = 0; $i < count($newpages); $i +=$item_per_page){
         array_push($pages, array_slice($newpages , $i ,$i + $item_per_page));
         }
-        return view("/causes" , compact('pages_number' , 'pages' , 'categories'));
+        $type = "ShowProductCategory";
+        $category_id  = $category->id;
+        return view("/causes" , compact('pages_number' , 'pages' , 'categories' , 'type' , 'category_id'));
     }
 
     public function search(Request $request){
@@ -60,7 +62,8 @@ class CausesController extends Controller
         for($i = 0; $i < count($product) ; $i +=$item_per_page){
             array_push($pages, array_slice($product , $i ,2));
             }
-            return view("/causes" , compact('pages_number' , 'pages' , 'categories'));
+            $type = "search";
+            return view("/causes" , compact('pages_number' , 'pages' , 'categories' , 'type'));
     }
     
 }

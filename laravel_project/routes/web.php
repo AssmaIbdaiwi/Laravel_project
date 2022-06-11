@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CausesController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory
 
 Route::get("/search", [CausesController::class , 'search']);
 
+Route::get("/product/{product}" , [ProductController::class , "index"]);
+Route::get("/product/add/{product}" , [ProductController::class , "add"]);
 
 // registration
 Auth::routes();

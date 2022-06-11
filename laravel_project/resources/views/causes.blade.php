@@ -49,7 +49,7 @@
                   <h3>{{ $product->item_name }}</h3>
                   <p>{{ $product->item_description }}</p>
                   <span class="donation-time mb-3 d-block"></span>
-                  <span class="fund-raised d-block d-flex justify-content-center"><a href=""><button type="button" class="btn btn-info">Info</button></a></span>
+                  <span class="fund-raised d-block d-flex justify-content-center"><a href="/product/{{$product->id}}"><button type="button" class="btn btn-info">Request</button></a></span>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@
                     <h3>{{ $product->item_name }}</h3>
                     <p>{{ $product->item_description }}</p>
                     <span class="donation-time mb-3 d-block"></span>
-                    <span class="fund-raised d-block d-flex justify-content-center"><a href=""><button type="button" class="btn btn-info">Request</button></a></span>
+                    <span class="fund-raised d-block d-flex justify-content-center"><a href="/product/{{$product->id}}"><button type="button" class="btn btn-info">Request</button></a></span>
                   </div>
                 </div>
               </div>
@@ -75,22 +75,60 @@
           <div class="col text-center">
             <div class="block-27">
               <ul>
+                @if ($type == "index")
                 @if (isset($_GET["page"]))
                 <li style="display:none;"><a href=""></a></li>
-                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=@if($_GET["page"] - 1 == 0)1
+                <li><a href="causes?page=@if($_GET["page"] - 1 == 0)1
                 @else{{$_GET["page"]-1}}@endif#product_section">&lt;</a></li>
                 @for ($i = 1; $i <= $pages_number; $i++)
-                <li><span><a href="{{ $_SERVER['REQUEST_URI'] }}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                <li><span><a href="causes?page={{ $i }}#product_section">{{ $i }}</a></span></li>
                 @endfor
-                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=@if($_GET["page"] + 1 == $pages_number + 1){{$pages_number}}
+                <li><a href="causes?page=@if($_GET["page"] + 1 == $pages_number + 1){{$pages_number}}
                   @else{{$_GET["page"]+1}}@endif#product_section">&gt;</a></li>
                 @else
                 <li style="display:none;"><a href=""></a></li>
-                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=1#product_section">&lt;</a></li>
+                <li><a href="causes?page=1#product_section">&lt;</a></li>
                 @for ($i = 1; $i <= $pages_number; $i++)
-                <li><span><a href="{{ $_SERVER['REQUEST_URI'] }}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                <li><span><a href="causes?page={{ $i }}#product_section">{{ $i }}</a></span></li>
                 @endfor
-                <li><a href="{{ $_SERVER['REQUEST_URI'] }}?page=2#product_section">&gt;</a></li>
+                <li><a href="causes?page=2#product_section">&gt;</a></li>
+                @endif
+                @elseif ($type == "ShowProductCategory")
+                @if (isset($_GET["page"]))
+                <li style="display:none;"><a href=""></a></li>
+                <li><a href="/causes/{{$category_id}}?page=@if($_GET["page"] - 1 == 0)1
+                @else{{$_GET["page"]-1}}@endif#product_section">&lt;</a></li>
+                @for ($i = 1; $i <= $pages_number; $i++)
+                <li><span><a href="/causes/{{$category_id}}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                @endfor
+                <li><a href="/causes/{{$category_id}}?page=@if($_GET["page"] + 1 == $pages_number + 1){{$pages_number}}
+                  @else{{$_GET["page"]+1}}@endif#product_section">&gt;</a></li>
+                @else
+                <li style="display:none;"><a href=""></a></li>
+                <li><a href="/causes/{{$category_id}}?page=1#product_section">&lt;</a></li>
+                @for ($i = 1; $i <= $pages_number; $i++)
+                <li><span><a href="/causes/{{$category_id}}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                @endfor
+                <li><a href="/causes/{{$category_id}}?page=2#product_section">&gt;</a></li>
+                @endif
+                @elseif ($type == "search")
+                @if (isset($_GET["page"]))
+                <li style="display:none;"><a href=""></a></li>
+                <li><a href="/search?search={{$_GET["search"]}}@if($_GET["page"] - 1 == 0)1
+                @else{{$_GET["page"]-1}}@endif#product_section">&lt;</a></li>
+                @for ($i = 1; $i <= $pages_number; $i++)
+                <li><span><a href="/search?search={{$_GET["search"]}}#product_section">{{ $i }}</a></span></li>
+                @endfor
+                <li><a href="/search?search={{$_GET["search"]}}@if($_GET["page"] + 1 == $pages_number + 1){{$pages_number}}
+                  @else{{$_GET["page"]+1}}@endif#product_section">&gt;</a></li>
+                @else
+                <li style="display:none;"><a href=""></a></li>
+                <li><a href="/search?search={{$_GET["search"]}}=1#product_section">&lt;</a></li>
+                @for ($i = 1; $i <= $pages_number; $i++)
+                <li><span><a href="/search?search={{$_GET["search"]}}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
+                @endfor
+                <li><a href="/search?search={{$_GET["search"]}}?page=2#product_section">&gt;</a></li>
+                @endif
                 @endif
               </ul>
             </div>
