@@ -80,7 +80,7 @@
         					<h3><a href="teacher-single.html">Ghaida'a Obeidat</a></h3>
         					<span class="position">Project Owner</span>
         					<div class="text">
-		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>Our <span>humble </span> manager.</p>
 		        			</div>
         				</div>
         			</div>
@@ -94,7 +94,7 @@
         					<h3><a href="teacher-single.html">Assma Ibdawi</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>Donated <span>$150</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>The very <span>supportive</span> colleague.</p>
 		        			</div>
         				</div>
         			</div>
@@ -108,7 +108,7 @@
         					<h3><a href="teacher-single.html">Marah Al-Khateeb</a></h3>
         					<span class="position">Scrum Master</span>
         					<div class="text">
-		        				<p>Donated <span>$250</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>Our <span>kind</span> leader assistant.</p>
 		        			</div>
         				</div>
         			</div>
@@ -122,7 +122,7 @@
         					<h3><a href="teacher-single.html">Mohammed Ababneh</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>The very  <span>talented </span> back-end developer.</a></p>
 		        			</div>
         				</div>
         			</div>
@@ -136,7 +136,7 @@
         					<h3><a href="teacher-single.html">Ashraf Abueraq</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>The <span>creative </span>back-end developer. </p>
 		        			</div>
         				</div>
         			</div>
@@ -150,7 +150,7 @@
         					<h3><a href="teacher-single.html">Leen Abu El-hijaa</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>The <span>sweet</span> front-end developer</p>
 		        			</div>
         				</div>
         			</div>
