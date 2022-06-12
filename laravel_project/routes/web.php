@@ -1,7 +1,14 @@
 <?php
 
+<<<<<<< HEAD
 use App\Http\Controllers\ContactController;
+=======
+use Illuminate\Support\Facades\Auth;
+>>>>>>> bfd36c350a70f11118a1ca26ec77745be89b82dc
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CausesController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +26,13 @@ Route::get('/', function () {
 });
 
 
+Route::get('/causes' , [CausesController::class, 'index']);
+Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory']);
 
+Route::get("/search", [CausesController::class , 'search']);
 
+Route::get("/product/{product}" , [ProductController::class , "index"]);
+Route::get("/product/add/{product}" , [ProductController::class , "add"]);
 
 
 
@@ -29,5 +41,9 @@ Route::get('/', function () {
 // registration
 Auth::routes();
 
+<<<<<<< HEAD
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('contact',[ContactController::class]);
+=======
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+>>>>>>> bfd36c350a70f11118a1ca26ec77745be89b82dc
