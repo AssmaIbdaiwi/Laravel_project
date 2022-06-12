@@ -43,9 +43,9 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-// Route::get('/profile', function () {
-//     return view('profile');
-// });
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 Route::resource('indexx', IndexxController::class);
 Route::resource('delivery', DeliveryController::class);
@@ -70,4 +70,4 @@ Route::get("/product/add/{product}" , [ProductController::class , "add"]);
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profileUpdate'])->name('profileupdate');
+
