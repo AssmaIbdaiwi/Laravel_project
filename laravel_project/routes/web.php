@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\adminUserController;
+use App\Http\Controllers\adminCController;
+use App\Http\Controllers\adminMController;
+use App\Http\Controllers\adminOController;
+use App\Http\Controllers\adminPController;
+use App\Http\Controllers\adminUController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +25,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+Route::resource('user', adminUController::class);
+Route::resource('category', adminCController::class);
+Route::resource('product', adminPController::class);
+Route::resource('order', adminOController::class);
+Route::resource('message', adminMController::class);
