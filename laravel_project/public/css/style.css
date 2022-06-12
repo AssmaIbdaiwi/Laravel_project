@@ -925,7 +925,8 @@ pre {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 58.33333%;
     flex: 0 0 58.33333%;
-    max-width: 58.33333%; }
+    max-width: 58.33333%; 
+  }
   .col-md-8 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 66.66667%;
@@ -7786,7 +7787,9 @@ h1, h2, h3, h4, h5,
 
 .ftco-section-3 {
   padding: 8em 0;
-  position: relative; }
+  position: relative;
+margin-top: 10%;
+margin-bottom: 10%; }
   .ftco-section-3 .overlay {
     position: absolute;
     top: 0;
@@ -8281,7 +8284,7 @@ textarea.form-control {
   font-size: 24px; }
 
 .ftco-section {
-  padding: 7em 0;
+  padding: 3em 0;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
