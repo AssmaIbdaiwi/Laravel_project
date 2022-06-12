@@ -1,7 +1,7 @@
 @extends('master') 
 @section('content')
     
-    <div class="hero-wrap" style="background-image: url('https://www.hopewwsea.org/wp-content/uploads/elementor/thumbs/20901111-or93f6olrnlnuxrc696qojhj6orojkz8k6w4j21y8k.png'); " data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('https://persiangulfcharity.com/wp-content/uploads/2018/10/adult-3435775_1280.jpg'); " data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -22,8 +22,8 @@
     			</div>
     			<div class="col-md-6 pl-md-5 ftco-animate">
     				<h2 class="mb-4">Welcome to GiftHand Stablished in 2022</h2>
-    				<p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.</p>
-    				<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+    				<p>We are a humanitarian aid organization dedicated to improving the quality of life of people, communities and our planet by sourcing and directly delivering surplus medical supplies and equipment to communities in need around the world.</p>
+    				<p>We work with hospitals, distributors and manufacturers to collect and redistribute medical products to qualified healthcare facilities in medically underserved communities.</p>
     			</div>
     		</div>
     	</div>
@@ -67,8 +67,8 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Latest Donations</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h2 class="mb-4">Our Members</h2>
+            <p>Alone we can do so little; together we can do so much.</p>
           </div>
         </div>
         <div class="row">
@@ -77,8 +77,8 @@
         			<div class="d-flex mb-4">
         				<div class="img" style="background-image: url(images/person_1.jpg);"></div>
         				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position">Donated Just now</span>
+        					<h3><a href="teacher-single.html">Ghaida'a Obeidat</a></h3>
+        					<span class="position">Project Owner</span>
         					<div class="text">
 		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
 		        			</div>
@@ -89,10 +89,10 @@
         	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
         			<div class="d-flex mb-4">
-        				<div class="img" style="background-image: url(images/person_2.jpg);"></div>
+        				<div class="img" style="background-image: url(images/assma.jfif);"></div>
         				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position">Donated Just now</span>
+        					<h3><a href="teacher-single.html">Assma Ibdawi</a></h3>
+        					<span class="position">Developer</span>
         					<div class="text">
 		        				<p>Donated <span>$150</span> for <a href="#">Children Needs Food</a></p>
 		        			</div>
@@ -105,10 +105,52 @@
         			<div class="d-flex mb-4">
         				<div class="img" style="background-image: url(images/person_3.jpg);"></div>
         				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
-        					<span class="position">Donated Just now</span>
+        					<h3><a href="teacher-single.html">Marah Al-Khateeb</a></h3>
+        					<span class="position">Scrum Master</span>
         					<div class="text">
 		        				<p>Donated <span>$250</span> for <a href="#">Children Needs Food</a></p>
+		        			</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+			<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+        			<div class="d-flex mb-4">
+        				<div class="img" style="background-image: url(images/person_1.jpg);"></div>
+        				<div class="info ml-4">
+        					<h3><a href="teacher-single.html">Mohammed Ababneh</a></h3>
+        					<span class="position">Developer</span>
+        					<div class="text">
+		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
+		        			</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+			<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+        			<div class="d-flex mb-4">
+        				<div class="img" style="background-image: url(images/person_1.jpg);"></div>
+        				<div class="info ml-4">
+        					<h3><a href="teacher-single.html">Ashraf Abueraq</a></h3>
+        					<span class="position">Developer</span>
+        					<div class="text">
+		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
+		        			</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+			<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+        			<div class="d-flex mb-4">
+        				<div class="img" style="background-image: url(images/leenpic.png);"></div>
+        				<div class="info ml-4">
+        					<h3><a href="teacher-single.html">Leen Abu El-hijaa</a></h3>
+        					<span class="position">Developer</span>
+        					<div class="text">
+		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
 		        			</div>
         				</div>
         			</div>

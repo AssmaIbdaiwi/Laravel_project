@@ -2,7 +2,7 @@
    @extends('master') 
    @section('content')
     
-    <div class="hero-wrap" style="background-image: url('https://sperloscivil.ir/wp-content/uploads/2022/03/header-Contact-us.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url('https://www.lifeofpix.com/wp-content/uploads/2018/07/308-name071951-jj-1600x1196.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -23,16 +23,16 @@
           </div>
           <div class="w-100"></div>
           <div class="col-md-3">
-            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p><span>Address:</span> Irbid, Jordan</p>
           </div>
           <div class="col-md-3">
-            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+            <p><span>Phone:</span> <a href="tel://1234567920">0777777777</a></p>
           </div>
           <div class="col-md-3">
-            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@gifthand.com</a></p>
           </div>
           <div class="col-md-3">
-            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+            <p><span>Website</span> <a href="#">gifthand.com</a></p>
           </div>
         </div>
         <div class="row block-9">
