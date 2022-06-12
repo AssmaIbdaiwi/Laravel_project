@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CausesController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonateController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +21,12 @@ use App\Http\Controllers\DonateController;
 |
 */
 
-Route::get('/indexx', function () {
-    return view('indexx');
+
+// Route::get('/indexx', function () {
+//     return view('indexx');
+
+Route::get('/', function () {
+    return view('contact');
 });
 Route::get('/donation', function () {
     return view('donation');
@@ -43,9 +50,24 @@ Route::get('/profile', function () {
 Route::resource('indexx', IndexxController::class);
 Route::resource('delivery', DeliveryController::class);
 Route::resource('donate', DonateController::class);
+
+Route::resource('contact',ContactController::class);
+
+
 Route::get('/causes' , [CausesController::class, 'index']);
+Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory']);
+
+Route::get("/search", [CausesController::class , 'search']);
+
+Route::get("/product/{product}" , [ProductController::class , "index"]);
+Route::get("/product/add/{product}" , [ProductController::class , "add"]);
+
+
+
 
 
 // registration
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

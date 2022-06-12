@@ -21,7 +21,11 @@
       <div class="row g-0 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
           <div class="card cascading-right" style="
+<<<<<<< HEAD
               background: hsla(0, 0%, 100%, 0.55);
+=======
+              background: hsla(175, 77%, 88%, 0.55);
+>>>>>>> fcc2076d67350d9fee17b9808c50f677b8beb9eb
               backdrop-filter: blur(30px);
               ">
             <div class="card-body p-5 shadow-5 text-center">
@@ -77,7 +81,11 @@
                 <div class="form-check d-flex justify-content-center mb-4">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                   <label class="form-check-label" for="form2Example33">
+<<<<<<< HEAD
                     Remember Me
+=======
+                    Subscribe to our Donations
+>>>>>>> fcc2076d67350d9fee17b9808c50f677b8beb9eb
                   </label>
                 </div>
   
