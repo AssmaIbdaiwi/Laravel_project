@@ -39,9 +39,9 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="{{url('indexx')}}" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="{{url('donation')}}" class="nav-link">Donations</a></li>
-          {{-- <li class="nav-item"><a href="causes.html" class="nav-link">Causes</a></li> --}}
-          <li class="nav-item"><a href="{{url('donate')}}" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="{{url('causes')}}" class="nav-link">Donations</a></li>
+          <li class="nav-item"><a href="{{url('addprofile')}}" class="nav-link">Donator</a></li>
+          <li class="nav-item"><a href="{{url('donate')}}" class="nav-link">Donator</a></li>
           <li class="nav-item"><a href="{{url('delivery')}}" class="nav-link">Delivery Volunteering</a></li>
           <li class="nav-item"><a href="{{url('about')}}" class="nav-link">About us</a></li>
           <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>

@@ -9,7 +9,7 @@ use App\Http\Controllers\DonateController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\AddProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ Route::resource('delivery', DeliveryController::class);
 Route::resource('donate', DonateController::class);
 Route::resource('contact',ContactController::class);
 Route::resource('profile',ProfileController::class);
-
+Route::resource('addprofile',AddProfileController::class);
 
 Route::get('/causes' , [CausesController::class, 'index']);
 Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory']);

@@ -77,11 +77,7 @@
                 <div class="form-check d-flex justify-content-center mb-4">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                   <label class="form-check-label" for="form2Example33">
-<<<<<<< HEAD
-                    Remember Me
-=======
                     Subscribe to our Donations
->>>>>>> fcc2076d67350d9fee17b9808c50f677b8beb9eb
                   </label>
                 </div>
   
