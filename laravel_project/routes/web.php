@@ -1,7 +1,11 @@
 <?php
 use App\Http\Controllers\IndexxController;
+use App\Http\Controllers\DeliveryController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CausesController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DonateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +27,9 @@ Route::get('/donation', function () {
 Route::get('/donate', function () {
     return view('donate');
 });
-Route::get('/delivery', function () {
-    return view('delivery');
-});
+// Route::get('/delivery', function () {
+//     return view('delivery');
+// });
 Route::get('/about', function () {
     return view('about');
 });
@@ -37,9 +41,11 @@ Route::get('/profile', function () {
 });
 
 Route::resource('indexx', IndexxController::class);
+Route::resource('delivery', DeliveryController::class);
+Route::resource('donate', DonateController::class);
+Route::get('/causes' , [CausesController::class, 'index']);
 
 
 // registration
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

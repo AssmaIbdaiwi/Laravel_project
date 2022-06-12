@@ -9,9 +9,16 @@ class IndexxController extends Controller
     public function index()
     {
 
-    $data['products'] = Product::orderBy('id','desc')->limit(4)->get();   
-    $data['categories'] = Category::orderBy('id','asc')->limit(8)->get();
-    return view('indexx', $data);
+    // $data['products'] = Product::orderBy('id','desc')->get();  
+
+    $categories= Category::orderBy('id','asc')->limit(8)->get();
+
+
+    $data= Category::Join('products', 'products.item_category_id', '=', 'categories.id')
+    ->limit(4)
+    ->get(['*']);
+// dd($products);
+    return view('indexx', compact('data','categories'));
 
     }
 
