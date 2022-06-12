@@ -1,16 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-=======
->>>>>>> fcc2076d67350d9fee17b9808c50f677b8beb9eb
 
 
 

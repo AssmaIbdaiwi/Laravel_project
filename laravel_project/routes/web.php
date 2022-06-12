@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonateController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -25,9 +26,9 @@ use App\Http\Controllers\ProductController;
 // Route::get('/indexx', function () {
 //     return view('indexx');
 
-Route::get('/', function () {
-    return view('contact');
-});
+// Route::get('/', function () {
+//     return view('contact');
+// });
 Route::get('/donation', function () {
     return view('donation');
 });
@@ -43,15 +44,16 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/profile', function () {
-    return view('profile');
-});
+
+// Route::get('/profile', function () {
+//     return view('profile');
+// });
 
 Route::resource('indexx', IndexxController::class);
 Route::resource('delivery', DeliveryController::class);
 Route::resource('donate', DonateController::class);
-
 Route::resource('contact',ContactController::class);
+Route::resource('profile',ProfileController::class);
 
 
 Route::get('/causes' , [CausesController::class, 'index']);

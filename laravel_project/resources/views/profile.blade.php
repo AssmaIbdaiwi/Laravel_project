@@ -31,12 +31,13 @@
 				<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-			<form method="POST" action="{{route('profile')}}">
+			<form method="POST" action="{{ route('profile.update', $account->id) }}">
 	
 	@csrf	
+	@method('PUT')
 			<div class="form-group">
 					<label for="fullName">Full Name</label>
-					<input type="text" value="{{Auth::user()->user_name}}" class="form-control" id="fullName" >
+					<input name ="user_name" type="text"@foreach($data as $dates) value="  {{ Auth::user()->name }}" @endforeach class="form-control" id="fullName" >
 				</div>
 			</div>
 			@error('name')
@@ -47,7 +48,7 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="eMail">Email</label>
-					<input type="email" value="{{Auth::user()->user_email}}" class="form-control" id="eMail" >
+					<input type="email" @foreach($data as $users) placeholder="{{ $users->email}}" @endforeach class="form-control" id="eMail" name="user_email">
 				</div>
 			</div>
 			@error('email')
@@ -58,7 +59,7 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="phone">Phone</label>
-					<input type="text" value="" class="form-control" id="phone" >
+					<input type="text" value="" class="form-control" id="phone" name="user_mobile">
 				</div>
 			</div>
 		</div>
@@ -69,19 +70,19 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
 					<label for="Street">Street</label>
-					<input type="name" class="form-control" id="Street" placeholder="Enter Street">
+					<input type="name" class="form-control" id="Street" placeholder="Enter Street" name="user_address">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="ciTy">City</label>
-					<input type="name" class="form-control" id="ciTy" placeholder="Enter City">
+					<label for="ciTy">Password</label>
+					<input type="name" class="form-control" id="ciTy" placeholder="Enter City" name="password">
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 				<div class="form-group">
-					<label for="zIp">Zip Code</label>
-					<input type="text" class="form-control" id="zIp" placeholder="Zip Code">
+					<label for="zIp">image</label>
+					<input type="text" class="form-control" id="zIp" placeholder="Zip Code" name="user_image">
 				</div>
 			</div>
 		</div>
