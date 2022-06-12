@@ -35,7 +35,8 @@
 
 								@csrf
 								@method('PUT')
-
+								<div class="row gutters">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="fullName">Full Name</label>
 									<input name="user_name" type="text" @foreach($data as $dates) value="{{ Auth::user()->name }}" @endforeach class class="form-control" id="fullName">
@@ -53,11 +54,8 @@
 								<input type="text" value="{{$data[0]->phone}}" class="form-control" id="phone" name="user_mobile">
 							</div>
 						</div>
-					</div>
-					<div class="row gutters">
-						<div a="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<h6 class="mt-3 mb-2" style="color:#51B7C6">Address</h6>
-						</div>
+				
+				
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="Street">Address</label>
@@ -80,6 +78,7 @@
 							</div>
 						</div>
 					</div>
+		
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="text-right">
