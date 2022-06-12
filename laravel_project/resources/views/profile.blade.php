@@ -1,129 +1,171 @@
 @extends('master') 
 @section('content')
     
-    <div class="hero-wrap" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-          <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Blog</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+<br><br>
+	@include('tabs')
 
-    
-    <section class="ftco-section">
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<div class="meta mb-3">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-                <h3 class="heading mt-3"><a href="#">Hurricane Irma has devastated Florida</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-		
+<div class="container">
+<div class="row gutters">
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+	<div class="card-body">
+		<div class="account-settings">
+			<div class="user-profile">
+				<div class="user-avatar">
+					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+				</div>
+				<h5 class="user-name">Yuki Hayashi</h5>
+				<h6 class="user-email">yuki@Maxwell.com</h6>
+			</div>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+	<div class="card-body">
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+			<form method="POST" action="{{route('profile')}}">
+	
+	@csrf	
+			<div class="form-group">
+					<label for="fullName">Full Name</label>
+					<input type="text" value="{{Auth::user()->user_name}}" class="form-control" id="fullName" >
+				</div>
+			</div>
+			@error('name')
+			<small class="is-invalid text-left alert alert-danger bg-light p-1">
+                                {{ $message }}
+                                </small>
+                            @enderror
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label for="eMail">Email</label>
+					<input type="email" value="{{Auth::user()->user_email}}" class="form-control" id="eMail" >
+				</div>
+			</div>
+			@error('email')
+                                <small class="is-invalid text-left alert alert-danger bg-light p-1">
+                                {{ $message }}
+                                </small>
+                            @enderror
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label for="phone">Phone</label>
+					<input type="text" value="" class="form-control" id="phone" >
+				</div>
+			</div>
+		</div>
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<h6 class="mt-3 mb-2" style="color:#51B7C6">Address</h6>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label for="Street">Street</label>
+					<input type="name" class="form-control" id="Street" placeholder="Enter Street">
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label for="ciTy">City</label>
+					<input type="name" class="form-control" id="ciTy" placeholder="Enter City">
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label for="zIp">Zip Code</label>
+					<input type="text" class="form-control" id="zIp" placeholder="Zip Code">
+				</div>
+			</div>
+		</div>
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-right">
+					<button type="submit" id="submit" name="submit" class="btn" style="background-color:#51B7C6">Update</button>
+				</div>
+			</div>
+		</div>
+		<form>
+	</div>
+</div>
+</div>
+</div>
+</div> <br><br>
+
+<style type="text/css">
+body {
+    margin: 0;
+    padding-top: 40px;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+</script>
     @endsection

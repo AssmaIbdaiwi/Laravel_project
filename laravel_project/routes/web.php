@@ -34,3 +34,5 @@ Route::get("/product/add/{product}" , [ProductController::class , "add"]);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profileUpdate'])->name('profileupdate');
