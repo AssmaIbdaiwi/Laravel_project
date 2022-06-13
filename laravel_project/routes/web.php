@@ -32,9 +32,9 @@ use App\Http\Controllers\AddProfileController;
 Route::get('/donation', function () {
     return view('donation');
 });
-Route::get('/donate', function () {
-    return view('donate');
-});
+// Route::get('/donate', function () {
+//     return view('donate');
+// });
 // Route::get('/delivery', function () {
 //     return view('delivery');
 // });
@@ -51,7 +51,7 @@ Route::get('/contact', function () {
 
 Route::resource('indexx', IndexxController::class);
 Route::resource('delivery', DeliveryController::class);
-Route::resource('donate', DonateController::class);
+// Route::resource('donate', DonateController::class);
 Route::resource('contact',ContactController::class);
 Route::resource('profile',ProfileController::class);
 Route::resource('addprofile',AddProfileController::class);
