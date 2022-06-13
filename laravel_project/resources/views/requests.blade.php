@@ -27,47 +27,47 @@
 							<h5 class="user-name">{{ Auth::user()->name }}</h5>
 							<h6 class="user-email">{{ Auth::user()->email }}</h6>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" style="margin: 8% 0">
 			<div class="card h-100">
 				<div class="card-body">
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<h6 class="mb-2" style="color:#51B7C6">Order Requests</h6>
-
 						</div>
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <table class="table">
                                 <thead class="thead-dark">
                                     <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Product Order ID</th>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col">Date</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Product Order ID</th>
+                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Date</th>
                                     </tr>
                                 </thead>
-                                    <?php 
+                                <?php 
                                     $i = 1;
-                                    ?>
-                                    @foreach ($data as $value)
-                                        <tr>
-                                            <th scope="row">{{ $i++ }}</th>
-                                            <td>{{ $value->product_order_id }}</td>
-                                            <td>{{ $value->product_name }}</td>
-                                            <td>{{ $value->created_at }}</td>
-                                        </tr>
-                                    @endforeach
+                                ?>
+                                <tbody>
+                                @foreach ($data as $value)
+                                    <tr>
+                                        <th scope="row">{{ $i++ }}</th>
+                                        <td>{{ $value->product_order_id }}</td>
+                                        <td>{{ $value->product_name }}</td>
+                                        <td>{{ $value->created_at }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
-                                </table>
-				</div>
-			</div>
-		</div>
-	</div>
+                            </table>
+                        </div>
+			        </div>
+		        </div>
+	        </div>
+        </div>
+    </div>
 </div>
 
 <style type="text/css">
