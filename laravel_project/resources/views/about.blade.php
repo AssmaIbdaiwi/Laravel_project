@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p>
+             {{-- <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p> --}}
             <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">About Us</h1>
           </div>
         </div>
@@ -29,7 +29,7 @@
     	</div>
     </section>
 
-    <section class="ftco-counter ftco-intro ftco-intro-2" id="section-counter">
+    {{-- <section class="ftco-counter ftco-intro ftco-intro-2" id="section-counter">
     	<div class="container">
     		<div class="row no-gutters">
     			<div class="col-md-5 d-flex justify-content-center counter-wrap ftco-animate">
@@ -61,7 +61,7 @@
           </div>
     		</div>
     	</div>
-    </section>
+    </section> --}}
 
     <section class="ftco-section bg-light">
       <div class="container">
@@ -80,7 +80,7 @@
         					<h3><a href="teacher-single.html">Ghaida'a Obeidat</a></h3>
         					<span class="position">Project Owner</span>
         					<div class="text">
-		        				<p>Our <span>humble </span> manager.</p>
+		        				<p>Our <span>humble </span> manager,full-stack developer.</p>
 		        			</div>
         				</div>
         			</div>
@@ -94,7 +94,7 @@
         					<h3><a href="teacher-single.html">Assma Ibdawi</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>The very <span>supportive</span> colleague.</p>
+		        				<p>The very <span>supportive</span> full-stack developer.</p>
 		        			</div>
         				</div>
         			</div>
@@ -108,7 +108,7 @@
         					<h3><a href="teacher-single.html">Marah Al-Khateeb</a></h3>
         					<span class="position">Scrum Master</span>
         					<div class="text">
-		        				<p>Our <span>kind</span> leader assistant.</p>
+		        				<p>Our <span>kind</span> leader assistant, full-stack developer.</p>
 		        			</div>
         				</div>
         			</div>
@@ -122,7 +122,7 @@
         					<h3><a href="teacher-single.html">Mohammed Ababneh</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>The very  <span>talented </span> back-end developer.</a></p>
+		        				<p>The very  <span>talented </span> full-stack developer.</a></p>
 		        			</div>
         				</div>
         			</div>
@@ -136,7 +136,7 @@
         					<h3><a href="teacher-single.html">Ashraf Abueraq</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>The <span>creative </span>back-end developer. </p>
+		        				<p>The <span>creative </span>full-stack developer. </p>
 		        			</div>
         				</div>
         			</div>
@@ -150,7 +150,7 @@
         					<h3><a href="teacher-single.html">Leen Abu El-hijaa</a></h3>
         					<span class="position">Developer</span>
         					<div class="text">
-		        				<p>The <span>sweet</span> front-end developer</p>
+		        				<p>The <span>sweet</span> full-stack developer.</p>
 		        			</div>
         				</div>
         			</div>

@@ -137,7 +137,7 @@
 
 
 <div class="hero-wrap"
-    style="background-image: url('https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/cf35e7773ffb0d33a1362e51e4b0bc2f.jpg');"
+    style="background-image: url('https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/video/BkNYJ-q_giyyhrxcu/videoblocks-positive-volunteer-helping-wheelchaired-man-with-carring-products_bl9gcazlkiz_thumbnail-1080_01.png');"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -161,6 +161,7 @@
                     <h5 class="text-center mb-4" style="color:#2F8F9D">Registration form</h5>
                     <form class="form-card"  method="POST" action="{{route('delivery.store')}}">
                         @csrf
+                        
                         <div class="row justify-content-between text-left">
 
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"

@@ -4,13 +4,13 @@
 
 
       
-    <div class="hero-wrap" style="background-image:url('{{ asset('images/bg_5.jpg') }}');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image:url('https://www.apdk.org/wp-content/uploads/2015/10/wheelchairs.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
               {{-- <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Causes</span></p> --}}
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Causes</h1>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Donations</h1>
             @if (session()->has('message'))
             <div x-data="{show: true}" x-init="setTimeout(() => show = false, 4000)" x-show="show" class="alert alert-success" role="alert">
               <p class="mb-0" style="color: black;">{{ session('message') }}</p>

@@ -925,7 +925,8 @@ pre {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 58.33333%;
     flex: 0 0 58.33333%;
-    max-width: 58.33333%; 
+    max-width: 58.33333%;
+    margin-top: 3%; 
   }
   .col-md-8 {
     -webkit-box-flex: 0;
@@ -1499,8 +1500,8 @@ pre {
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #212529;
-  border-color: #32383e; }
+  background-color: #345759;
+  border-color: #345759; }
 
 .table .thead-light th {
   color: #495057;
@@ -6205,7 +6206,7 @@ button.bg-dark:focus {
 
 .mb-5,
 .my-5 {
-  margin-bottom: 3rem !important; }
+  margin-bottom: 0rem !important; }
 
 .ml-5,
 .mx-5 {
@@ -7489,7 +7490,7 @@ h1, h2, h3, h4, h5,
 .hero-wrap {
   width: 100%;
   height: calc(100vh - 117px);
-  min-height: 700px;
+  max-height: 600px;
   position: relative; }
   .hero-wrap.hero-wrap-2 {
     height: 600px; }
@@ -7721,13 +7722,13 @@ h1, h2, h3, h4, h5,
     color: rgba(0, 0, 0, 0.7); }
     .ftco-intro .block-18.color-1 {
       background: #2F8F9D;
-    margin-top: 5%; }
+    margin-top: 24.5%; }
     .ftco-intro .block-18.color-2 {
       background: #82DBD8; 
-      margin-top: 7%; }
+      margin-top: 35%; }
     .ftco-intro .block-18.color-3 {
       background: #B3E8E5; 
-      margin-top: 7%; }
+      margin-top: 35%; }
     .ftco-intro .block-18 .text strong {
       font-size: 60px;
       color: #000;
