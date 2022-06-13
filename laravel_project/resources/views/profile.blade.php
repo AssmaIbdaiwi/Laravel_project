@@ -36,64 +36,53 @@
 								@csrf
 								@method('PUT')
 								<div class="row gutters">
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<div class="form-group">
-									<label for="fullName">Full Name</label>
-									<input name="user_name" type="text" value="{{ Auth::user()->name }}" class="form-control" id="fullName">
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+										<div class="form-group">
+											<label for="fullName">Full Name</label>
+											<input name="user_name" type="text" value="{{ Auth::user()->name }}" class="form-control" id="fullName">
+										</div>
+									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+										<div class="form-group">
+										<label for="eMail">Email</label>
+										<input type="email" @foreach($data as $users) value="{{ $users->email}}" @endforeach class="form-control" id="eMail" name="user_email" disable>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+										<div class="form-group">
+											<label for="phone">Phone</label>
+											<input type="text" value="{{$data[0]->phone}}" class="form-control" id="phone" name="user_mobile">
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+										<div class="form-group">
+										<label for="Street">Address</label>
+										<input type="text" class="form-control" id="Street" placeholder="Enter Street"
+										value="{{$data[0]->user_address}}"	name="user_address">
+									</div>
 								</div>
-						</div>
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="form-group">
-								<label for="eMail">Email</label>
-								<input type="email" @foreach($data as $users) value="{{ $users->email}}" @endforeach class="form-control" id="eMail" name="user_email" disable>
-							</div>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="phone">Phone</label>
-								<input type="text" value="{{$data[0]->phone}}" class="form-control" id="phone" name="user_mobile">
-							</div>
-						</div>
-				
-				
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="Street">Address</label>
-								<input type="text" class="form-control" id="Street" placeholder="Enter Street"
-								value="{{$data[0]->user_address}}"	name="user_address">
-							</div>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="ciTy">Password</label>
-								<input type="password" class="form-control" id="ciTy" placeholder="Enter City"
-								value="{{$data[0]->password}}"	name="password">
-							</div>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="zIp">image</label>
-								<input type="text" value="{{$data[0]->user_image}}" class="form-control" id="zIp" placeholder="Zip Code"
-									name="user_image">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label for="ciTy">Password</label>
+										<input type="password" class="form-control" id="ciTy" placeholder="Enter City"value="{{$data[0]->password}}"	name="password">
+										<button type="submit" id="submit" name="submit" class="btn" style="background-color:#51B7C6; margin:2% 0;">Save</button>
+									</div>
+								</div>
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label for="zIp">image</label>
+										<input type="text" value="{{$data[0]->user_image}}" class="form-control" id="zIp" placeholder="Zip Code" name="user_image">
+									</div>
+								</div>
+							</form>
 							</div>
 						</div>
 					</div>
-				</div>
-					<div class="row gutters">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="text-right">
-								<button type="submit" id="submit" name="submit" class="btn"
-									style="background-color:#51B7C6">Save</button>
-							</div>
-						</div>
-					</div>
-				
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-</div> <br><br>
 
 <style type="text/css">
 	body {
