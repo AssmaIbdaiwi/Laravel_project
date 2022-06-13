@@ -35,8 +35,8 @@
         margin: 5px 0px;
         box-sizing: border-box;
         border: 1px solid #ccc;
-        font-size: 18px !important;
-        font-weight: 300
+        /* font-size: 18px !important;
+        font-weight: 300 */
     }
 
     input:focus,
@@ -46,14 +46,14 @@
         box-shadow: none !important;
         border: 1px solid #00BCD4;
         outline-width: 0;
-        font-weight:
-            400
+        /* font-weight:
+            400 */
     }
 
     .btn-block {
         text-transform: uppercase;
-        font-size: 15px !important;
-        font-weight: 400;
+        /* font-size: 15px !important;
+        font-weight: 400; */
         height: 43px;
         cursor:
             pointer
@@ -139,86 +139,92 @@
 <div class="hero-wrap"
     style="background-image: url('https://d20umu42aunjpx.cloudfront.net/landingpages/volunteer-header.png');"
     data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
+    <div class="overlay">
+    </div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
             <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-                {{-- <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
-                        class="mr-2"><a href="index.html">Home</a></span> <span>Event</span></p> --}}
                 <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"></h1>
             </div>
         </div>
     </div>
 </div>
-{{-- --}}
 
-<br><br>
-@include('tabs')
+
+
+<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist" style="position: relative; top: 100px;">
+	<li class="nav-item" role="presentation" >
+	  <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="{{url('profile')}}">Profile</a></button>
+	</li>
+	<li class="nav-item" role="presentation">
+	  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-requests')}}">Your Requests</a></button>
+	</li>
+	<li class="nav-item" role="presentation">
+	  <button  class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-donations')}}">Your Donations</a></button>
+	</li>
+	<li class="nav-item" role="presentation">
+	  <button  class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile#myTab')}}">Donate</a></button>
+	</li>
+  </ul>
 
 <div class="container">
     <div class="row gutters">
-        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+		<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" style="margin: 8% 0">
             <div class="card h-100">
                 <div class="card-body">
                     <div class="account-settings">
                         <div class="user-profile">
                             <div class="user-avatar">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+								<img src="{{ Auth::user()->url_img }}" alt="Maxwell Admin">
                             </div>
-                            <h5 class="user-name">Yuki Hayashi</h5>
-                            <h6 class="user-email">yuki@Maxwell.com</h6>
+							<h5 class="user-name">{{ Auth::user()->name }}</h5>
+							<h6 class="user-email">{{ Auth::user()->email }}</h6>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+		<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" style="margin: 8% 0">
             <div class="card h-100">
                 <div class="card-body">
-
-                            <h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
-                            <form method="POST" action="">
-
-                                @csrf
-
-
-                                <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                            class="form-control-label px-3" style="color:#2F8F9D">Name of the medical
-                                            equipment<span class="text-danger"> *</span></label> <input type="text"
-                                            id="job" name="delivery_address" placeholder="" onblur="validate(6)"> </div>
-                                </div>
-                                <div class="row justify-content-between text-left">
-                                    <div class="form-group col-12 flex-column d-flex"> <label
-                                            class="form-control-label px-3" style="color:#2F8F9D">Description<span
-                                                class="text-danger">
-                                                *</span></label> <textarea id="ans" name="delivery_message"
-                                            placeholder="" onblur="validate(7)"></textarea> </div>
-                                </div>
-                                <div class="row justify-content-between text-left">
-                                    <div class="form-group col-sm-6 flex-column d-flex"> <label
-                                            class="form-control-label px-3" style="color:#2F8F9D">Image<span
-                                                class="text-danger"> *</span></label> <input type="file" id="job"
-                                            name="delivery_address" placeholder="" onblur="validate(5)"> 
-                                        </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="form-group col-sm-6"> <button type="submit" id="submit" name="submit"
-                                            class="btn" style="background-color:#51B7C6">Donate</button>
-                                        </div>
-                                </div>
-                            </form>
-                        </div>                         
-                    </div>
-                </div>    
+                    <h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
+                    <form method="POST" action="">
+                        @csrf
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label class="form-control-label px-3" style="color:#2F8F9D">Name of the medical equipment
+                                    <span class="text-danger"> *</span>
+                                </label>
+                                <input type="text" id="job" name="delivery_address" placeholder="" onblur="validate(6)">
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> 
+                                <label class="form-control-label px-3" style="color:#2F8F9D">Description
+                                    <span class="text-danger">*</span>
+                                </label> 
+                                <textarea id="ans" name="delivery_message" placeholder="" onblur="validate(7)"></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> 
+                                <label class="form-control-label px-3" style="color:#2F8F9D">Image
+                                    <span class="text-danger"> *</span>
+                                </label>
+                                <input type="file" id="job"name="delivery_address" placeholder="" onblur="validate(5)"> 
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group col-sm-6">
+                                <button type="submit" id="submit" name="submit" class="btn" style="background-color:#51B7C6">Donate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>    
         </div>
     </div>
-  
 </div>
-
- <br><br>
 
 <style type="text/css">
     body {
@@ -254,7 +260,7 @@
 
     .account-settings .user-profile h6.user-email {
         margin: 0;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         font-weight: 400;
         color: #9fa8b9;
     }

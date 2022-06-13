@@ -4,13 +4,13 @@
 <br><br>
 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist" >
 	<li class="nav-item" role="presentation" >
-	  <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="{{url('profile')}}">Profile</a></button>
+	  <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="{{url('profile')}}">Profile</a></button>
 	</li>
 	<li class="nav-item" role="presentation">
-	  <button  class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-requests')}}">Your Requests</a></button>
+	  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-requests')}}">Your Requests</a></button>
 	</li>
 	<li class="nav-item" role="presentation">
-	  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-donations')}}">Your Donations</a></button>
+	  <button  class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-donations')}}">Your Donations</a></button>
 	</li>
 	<li class="nav-item" role="presentation">
 	  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile#myTab')}}">Donate</a></button>
@@ -39,7 +39,7 @@
 				<div class="card-body">
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<h6 class="mb-2" style="color:#51B7C6">Order Requests</h6>
+							<h6 class="mb-2" style="color:#51B7C6">Your Donations</h6>
 						</div>
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <table class="table">
@@ -51,6 +51,7 @@
 										<th scope="col">Date</th>
 										<th scope="col">State</th>
 										<th scope="col">Delete</th>
+										
                                     </tr>
                                 </thead>
                                 <?php 
@@ -60,8 +61,8 @@
                                 @foreach ($data as $value)
                                     <tr>
                                         <th scope="row">{{ $i++ }}</th>
-                                        <td>{{ $value->product_order_id }}</td>
-                                        <td>{{ $value->product_name }}</td>
+                                        <td>{{ $value->id }}</td>
+                                        <td>{{ $value->item_name }}</td>
 										<td>{{ $value->created_at }}</td>
 										<td>@if ($value->state == 'pending')
 											<button type="button" class="btn btn-light" style="pointer-events: none" disabled>Pending</button>
@@ -76,7 +77,6 @@
 											Delete
 										</button>
 									</td>
-
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -88,7 +88,6 @@
         </div>
     </div>
 </div>
-
 
 @foreach ($data as $value)
 <div class="modal fade" id="exampleModal{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -105,7 +104,7 @@
 		</div>
 		<div class="modal-footer">
 		<button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
-		<form method="POST" action="delete-request/{{ $value->id }}">@csrf @method('DELETE') <input type="submit" class="btn btn-danger" value="Delete"></form></div>
+		<form method="POST" action="delete-donation/{{ $value->id }}">@csrf @method('DELETE') <input type="submit" class="btn btn-danger" value="Delete"></form></div>
 	</div>
 	</div>
 </div>

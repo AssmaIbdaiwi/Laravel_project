@@ -15,6 +15,12 @@ class Product extends Model
     {
       return $this->belongsTo(Category::class , 'item_category_id');
     }
+
+    public function user()
+    {
+      return $this->belongsTo(user::class , 'donater_id');
+    }
+
     public function order()
 {
     return $this->hasMany(Order::class);

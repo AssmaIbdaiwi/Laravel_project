@@ -15,7 +15,7 @@ class CreateDeliveriesTable extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_delivery_id');
+            $table->unsignedInteger('user_delivery_id');
             $table->string('delivery_name');
             $table->string('delivery_lname');
             $table->string('delivery_email');

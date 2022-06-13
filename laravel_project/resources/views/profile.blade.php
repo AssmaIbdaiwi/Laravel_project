@@ -12,7 +12,7 @@
 					<div class="account-settings">
 						<div class="user-profile">
 							<div class="user-avatar">
-								<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+								<img src="{{ Auth::user()->url_img }}" alt="Maxwell Admin">
 							</div>
 							<h5 class="user-name">{{ Auth::user()->name }}</h5>
 							<h6 class="user-email">@foreach($data as $users) {{ $users->email}} @endforeach</h6>
@@ -64,7 +64,7 @@
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 									<div class="form-group">
 										<label for="ciTy">Password</label>
-										<input type="password" class="form-control" id="ciTy" placeholder="Enter City"value="{{$data[0]->password}}"	name="password">
+										<input type="password" class="form-control" id="ciTy" placeholder="Enter City"	name="password">
 										<button type="submit" id="submit" name="submit" class="btn" style="background-color:#51B7C6; margin:2% 0;">Save</button>
 									</div>
 								</div>

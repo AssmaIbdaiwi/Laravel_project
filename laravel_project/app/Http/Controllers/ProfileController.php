@@ -28,8 +28,18 @@ class ProfileController extends Controller
     // public function create()
     // {
     // return view('profile');
-    // }
+    // }(
+    public function showDonations(){
+        $products = Product::all();
+        $data = array();
+        foreach($products as $product){
+            if($product["donater_id"] == auth::user()->id){
+                array_push($data , $product);
+            }
+        }
+    return view("profileDonation" , compact('data'));
     
+    }
     
     
     public function store(Request $request)
@@ -38,20 +48,13 @@ class ProfileController extends Controller
     }
 
 
-
-
-
-
-
-
-
-    public function show(User_Detail $account)
+    public function showRequests()
 {
     $data = array();
     $orders = Order::all();
     foreach($orders as $order){
         if($order["user_order_id"] == Auth::user()->id){
-            $order["product_name"] = Product::Find($order["user_order_id"])["item_name"];
+            $order["product_name"] = Product::Find($order["product_order_id"])["item_name"];
             array_push($data , $order);
         }
     }
