@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<<<<<<< HEAD
+<style>
     .card {
         padding: 30px 40px;
         margin-top: 60px;
@@ -154,7 +154,7 @@
 	  <button  class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-donations')}}">Your Donations</a></button>
 	</li>
 	<li class="nav-item" role="presentation">
-	  <button  class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile#myTab')}}">Donate</a></button>
+	  <button  class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile#myTab')}}">Donate Now</a></button>
 	</li>
   </ul>
 
@@ -169,7 +169,7 @@
 								<img src="{{ Auth::user()->url_img }}" alt="Maxwell Admin">
                             </div>
 							<h5 class="user-name">{{ Auth::user()->name }}</h5>
-							<h6 class="user-email">{{ Auth::user()->email }}</h6>
+							<h6 class="user-email" style="font-size: 0.788rem;">{{ Auth::user()->email }}</h6>
                         </div>
                     </div>
                 </div>
@@ -216,86 +216,6 @@
         </div>
     </div>
 </div>
-=======
-<br><br><br>
-<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist" >
-  <li class="nav-item" role="presentation" >
-    <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="{{url('profile')}}">Profile</a></button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button  class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true"><a href="{{url('addprofile')}}">Donate now</a></button>
-  </li>
-  <li>
-  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('profile/requests')}}">Your Requests</a></button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile')}}">Your Donations</a></button>
-  </li>
-</ul>
-
-<div class="container">
-	<div class="row gutters">
-		<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" style="margin: 4% 0">
-			<div class="card h-100">
-				<div class="card-body">
-					<div class="account-settings">
-						<div class="user-profile">
-							<div class="user-avatar">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
-							</div>
-							<h5 class="user-name">{{ Auth::user()->name }}</h5>
-							<h6 class="user-email">{{ Auth::user()->email}}</h6>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" style="margin: 4% 0">
-			<div class="card h-100">
-				<div class="card-body">
-					
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<form method="POST" action="">
-
-								@csrf
-								@method('PUT')
-								</div>
-							
-								<div class="col-xl-10 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
-								<label for="name">Equipment name</label>
-								<input type="text"  class="form-control" id="eMail" name="user_name" placeholder="medical equipment name" >
-							</div>
-						
-						
-							<div class="form-group">
-								<label for="ciTy">Description</label>
-								<textarea type="password" class="form-control" id="ciTy" 
-								placeholder="descripe your equipment"	name="password"></textarea>
-							</div>
-						
-							<div class="form-group">
-								<label for="zIp">image</label>
-								<input type="file" value="" class="form-control" id="zIp" placeholder="Zip Code"
-									name="user_image">
-									
-							</div>
-						</div>
-					<div class="row gutters">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<div class="text-right">
-								<button type="submit" id="submit" name="submit" class="btn"
-									style="background-color:#51B7C6">Donate</button>
-							</div>
-						</div>
-					</div>
-			</div>
-		</div>
-	</div>
-</div> <br><br>
->>>>>>> 90ed253661c3fa862ea3d7636f650f006d5b77b3
 
 <style type="text/css">
 	body {

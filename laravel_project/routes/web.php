@@ -62,7 +62,7 @@ Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory
 
 Route::get("/search", [CausesController::class , 'search']);
 
-route::get('profile-requests' , [ProfileController::class , 'showRequests']);
+route::get('/profile-requests' , [ProfileController::class , 'showRequests']);
 route::get('/profile-donations' , [ProfileController::class , 'showDonations']);
 Route::get("/product/{product}" , [ProductController::class , "index"]);
 Route::get("/product/add/{product}" , [ProductController::class , "add"]);
