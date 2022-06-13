@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\User_Detail;
 use App\Models\User;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -43,7 +47,15 @@ class ProfileController extends Controller
 
     public function show(User_Detail $account)
 {
- 
+    $data = array();
+    $orders = Order::all();
+    foreach($orders as $order){
+        if($order["user_order_id"] == Auth::user()->id){
+            $order["product_name"] = Product::Find($order["user_order_id"])["item_name"];
+            array_push($data , $order);
+        }
+    }
+    return view('requests', compact('data'));
 }
 
     public function edit(User_Detail $account)

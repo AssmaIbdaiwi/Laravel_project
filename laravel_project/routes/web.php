@@ -63,14 +63,14 @@ Route::get("/search", [CausesController::class , 'search']);
 
 Route::get("/product/{product}" , [ProductController::class , "index"]);
 Route::get("/product/add/{product}" , [ProductController::class , "add"]);
-
+route::get('/profile/requests' , [ProfileController::class , 'show']);
 
 
 
 
 // registration
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->group(function() {
 Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index']);

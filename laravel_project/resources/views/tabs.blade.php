@@ -5,4 +5,10 @@
   <li class="nav-item" role="presentation">
     <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true"><a href="{{url('addprofile')}}">Donate now</a></button>
   </li>
+  <li>
+  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('profile/requests')}}">Your Requests</a></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile')}}">Your Donations</a></button>
+  </li>
 </ul>

@@ -143,7 +143,7 @@
     </div>
     @else
     <div class="col-10">
-      <h1>There is no Items in this category</h1>
+      <h1>There is no Items</h1>
     </div>
     @endif
     </div>

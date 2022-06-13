@@ -1,12 +1,25 @@
 @extends('master')
 @section('content')
 
-<br><br>
-@include('tabs')
+<br><br><br>
+<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist" >
+  <li class="nav-item" role="presentation" >
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="{{url('profile')}}">Profile</a></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true"><a href="{{url('addprofile')}}">Donate now</a></button>
+  </li>
+  <li>
+  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('profile/requests')}}">Your Requests</a></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile')}}">Your Donations</a></button>
+  </li>
+</ul>
 
 <div class="container">
 	<div class="row gutters">
-		<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+		<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12" style="margin: 4% 0">
 			<div class="card h-100">
 				<div class="card-body">
 					<div class="account-settings">
@@ -23,14 +36,14 @@
 			</div>
 		</div>
 
-		<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+		<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12" style="margin: 4% 0">
 			<div class="card h-100">
 				<div class="card-body">
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6><br>
 						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<form method="POST" action="{{route('profile.update',Auth::user()->id)}}">
 
 								@csrf
