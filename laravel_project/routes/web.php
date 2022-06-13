@@ -1,14 +1,15 @@
 <?php
-use App\Http\Controllers\IndexxController;
-use App\Http\Controllers\DeliveryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CausesController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DonateController;
+use App\Http\Controllers\IndexxController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\AddProfileController;
 
 /*
@@ -61,11 +62,12 @@ Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory
 
 Route::get("/search", [CausesController::class , 'search']);
 
+route::get('/profile-requests' , [ProfileController::class , 'showRequests']);
+route::get('/profile-donations' , [ProfileController::class , 'showDonations']);
 Route::get("/product/{product}" , [ProductController::class , "index"]);
 Route::get("/product/add/{product}" , [ProductController::class , "add"]);
-route::get('/profile/requests' , [ProfileController::class , 'show']);
-
-
+Route::delete("delete-donation/{product}", [ProductController::class , "delete"]);
+route::delete("delete-request/{order}" , [OrderController::class , "delete"]);
 
 
 // registration

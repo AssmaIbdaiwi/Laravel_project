@@ -47,6 +47,14 @@
           <div class="row">
             @if (!isset($_GET["page"]))
             @foreach ( $pages[0] as $product )
+            @if ($product->state == "pending" || $product->state == "refused")
+              @if (count($pages) == 1)
+                <div class="col-10">
+                <h1>There is no Items</h1>
+                </div>
+              @endif
+              @continue
+            @endif
             <div class="col-md-4 ftco-animate mt-3">
               <div class="cause-entry">
                 <a class="img" style="background-image: url('{{ asset('images/' .$product->item_image) }}');"></a>
@@ -61,6 +69,14 @@
             @endforeach
             @else
             @foreach ($pages[$_GET["page"] - 1] as $product)
+            @if ($product->state == "pending" || $product->state == "Refused")
+            @if (count($pages) == 1)
+              <div class="col-10">
+              <h1>There is no Items</h1>
+              </div>
+            @endif
+            @continue
+          @endif
             <div class="col-md-4 ftco-animate mt-3">
                 <div class="cause-entry">
                   <a class="img" style="background-image: url('{{ asset('images/' .$product->item_image) }}');"></a>
@@ -116,8 +132,8 @@
                 @endfor
                 <li><a href="/causes/{{$category_id}}?page=2#product_section">&gt;</a></li>
                 @endif
-                @elseif ($type == "search")
-                @if (isset($_GET["page"]))
+                {{-- @elseif ($type == "search") --}}
+                {{-- @if (isset($_GET["page"]))
                 <li style="display:none;"><a href=""></a></li>
                 <li><a href="/search?search={{$_GET["search"]}}@if($_GET["page"] - 1 == 0)1
                 @else{{$_GET["page"]-1}}@endif#product_section">&lt;</a></li>
@@ -133,7 +149,7 @@
                 <li><span><a href="/search?search={{$_GET["search"]}}?page={{ $i }}#product_section">{{ $i }}</a></span></li>
                 @endfor
                 <li><a href="/search?search={{$_GET["search"]}}?page=2#product_section">&gt;</a></li>
-                @endif
+                @endif --}}
                 @endif
               </ul>
             </div>

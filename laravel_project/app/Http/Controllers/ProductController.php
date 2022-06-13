@@ -32,4 +32,10 @@ class ProductController extends Controller
 
         return redirect("/causes")->with('message' , "Requst sent successfully");
     }
+
+
+    public function delete(Product $product){
+        $product->delete();
+        return redirect('/profile-donations');
+    }
 }

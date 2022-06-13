@@ -6,14 +6,14 @@
   <li class="nav-item" role="presentation" >
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="{{url('profile')}}">Profile</a></button>
   </li>
+  <li>
+  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('profile-requests')}}">Your Requests</a></button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('/profile-donations')}}">Your Donations</a></button>
+  </li>
   <li class="nav-item" role="presentation">
     <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true"><a href="{{url('addprofile')}}">Donate now</a></button>
-  </li>
-  <li>
-  <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('profile/requests')}}">Your Requests</a></button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button  class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><a href="{{url('addprofile')}}">Your Donations</a></button>
   </li>
 </ul>
 
@@ -25,7 +25,7 @@
 					<div class="account-settings">
 						<div class="user-profile">
 							<div class="user-avatar">
-							<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+								<img src="{{ Auth::user()->url_img }}" alt="Maxwell Admin">
 							</div>
 							<h5 class="user-name">{{ Auth::user()->name }}</h5>
 							<h6 class="user-email">{{ Auth::user()->email}}</h6>
