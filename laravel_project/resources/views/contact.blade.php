@@ -40,8 +40,7 @@
           
           </div>
 
-          <div class="col-md-6" id="map"> </div>
-        </div>
+          <div class="col-md-6" id=""> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20450.48280677248!2d35.83756342532964!3d32.5436578196297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8e65dbad58997cec!2zMzLCsDMzJzA5LjgiTiAzNcKwNTAnNTkuMyJF!5e0!3m2!1sen!2sjo!4v1655148472730!5m2!1sen!2sjo" width="600" height="360" >
       </div>
     </section>
     @endsection

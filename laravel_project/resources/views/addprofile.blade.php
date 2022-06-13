@@ -127,7 +127,7 @@
 
 
 
-<div class="hero-wrap"
+{{-- <div class="hero-wrap"
     style="background-image: url('https://d20umu42aunjpx.cloudfront.net/landingpages/volunteer-header.png');"
     data-stellar-background-ratio="0.5">
     <div class="overlay">
@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 
