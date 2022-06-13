@@ -28,15 +28,13 @@
 				<div class="card-body">
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6><br>
+							<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<form method="POST" action="{{route('profile.update',Auth::user()->id)}}">
 
 								@csrf
 								@method('PUT')
-								</div>
-								
 								<div class="row gutters">
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
@@ -80,7 +78,7 @@
 							</div>
 						</div>
 					</div>
-</div>
+				</div>
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="text-right">
@@ -94,6 +92,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div> <br><br>
 
 <style type="text/css">
