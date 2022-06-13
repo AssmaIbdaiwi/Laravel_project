@@ -11,7 +11,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\AddProfileController;
-
+use App\Http\Controllers\adminCController;
+use App\Http\Controllers\adminMController;
+use App\Http\Controllers\adminOController;
+use App\Http\Controllers\adminPController;
+use App\Http\Controllers\adminUController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,3 +81,16 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::middleware('auth')->group(function() {
 Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index']);
 });
+
+
+
+
+//admin
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+Route::resource('user', adminUController::class);
+Route::resource('category', adminCController::class);
+Route::resource('product', adminPController::class);
+Route::resource('order', adminOController::class);
+Route::resource('message', adminMController::class);

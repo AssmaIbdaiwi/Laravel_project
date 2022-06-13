@@ -62,11 +62,11 @@
 			@foreach ($categories as $category)
 			<div class="col-md-3 d-flex ftco-animate">
 				<div class="blog-entry align-self-stretch"   >
-					<a href="blog-single.html" class="block-20" style="background-image: url('https://www.mcsarpongmedicalsupplies.com/wp-content/uploads/2021/06/H90dff1916f3d459b98cea64fbafb75a4L.jpg');">
+					<a href="blog-single.html" class="block-20" style="background-image: url('{{asset('public/adminImage/'.$category->category_image);}}'); ">
 					</a>
 					<div class="text p-4 d-block">
 						<div class="meta mb-3" >
-							<div><a style="color:blue" href="#">*********************************</a>
+							<div><a style="color:white" href="#">*********************************</a>
 							</div>
 					
 							<div><a href="#" class="meta-chat"><span class=""></span> </a>
@@ -195,7 +195,7 @@
 			@foreach ($data as $product)
 			<div class="col-md-3 d-flex ftco-animate">
 				<div class="blog-entry align-self-stretch">
-					<a href="blog-single.html" class="block-20" style="background-image: url('https://www.mcsarpongmedicalsupplies.com/wp-content/uploads/2021/06/H90dff1916f3d459b98cea64fbafb75a4L.jpg');">
+					<a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/' .$product->item_image) }}');">
 					</a>
 					<div class="text p-4 d-block">
 						<div class="meta mb-3">
