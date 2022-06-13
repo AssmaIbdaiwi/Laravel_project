@@ -40,11 +40,11 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="{{url('indexx')}}" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="{{url('causes')}}" class="nav-link">Donations</a></li>
-          <li class="nav-item"><a href="{{url('addprofile')}}" class="nav-link">Donator</a></li>
-          <li class="nav-item"><a href="{{url('donate')}}" class="nav-link">Donator</a></li>
+          {{-- <li class="nav-item"><a href="{{url('addprofile')}}" class="nav-link">Donate</a></li> --}}
+          {{-- <li class="nav-item"><a href="{{url('donate')}}" class="nav-link">Our Donators</a></li> --}}
           <li class="nav-item"><a href="{{url('delivery')}}" class="nav-link">Delivery Volunteering</a></li>
           <li class="nav-item"><a href="{{url('about')}}" class="nav-link">About us</a></li>
-          <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="{{url('contact')}}" class="nav-link">Contact us</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              Profile

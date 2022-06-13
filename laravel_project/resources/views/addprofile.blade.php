@@ -145,62 +145,199 @@
             <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
                 {{-- <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span
                         class="mr-2"><a href="index.html">Home</a></span> <span>Event</span></p> --}}
-                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Delivery
-                    Volunteering</h1>
+                <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"></h1>
             </div>
         </div>
     </div>
 </div>
+{{-- --}}
 
-<section>
-    <div class="container-fluid px-1 py-5 mx-auto">
-        <div class="row d-flex justify-content-center">
-            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <h1 style="color:#2F8F9D">Be a volunteer</h1>
-                <div class="card">
-                    <h5 class="text-center mb-4" style="color:#2F8F9D">Registration form</h5>
-                    <form class="form-card"  method="POST" action="#">
-                        @csrf
-                        <div class="row justify-content-between text-left">
+<br><br>
+@include('tabs')
 
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
-                                    style="color:#2F8F9D">First name<span class="text-danger"> </span></label> <input
-                                    type="text" id="fname" name="delivery_name" 
-                                    onblur="validate(1)" > </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
-                                    style="color:#2F8F9D">Last name<span class="text-danger"> *</span></label> <input
-                                    type="text" id="lname" name="delivery_lname" placeholder="Enter your last name"
-                                    onblur="validate(2)"> </div>
-                        </div>
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
-                                    style="color:#2F8F9D">Email<span class="text-danger"> </span></label> <input
-                                    type="text" id="email" name="delivery_email"  onblur="validate(3)">
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
                             </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
-                                    style="color:#2F8F9D">Phone number<span class="text-danger"> *</span></label> <input
-                                    type="text" id="mob" name="delivery_mobile" placeholder="" onblur="validate(4)"> </div>
+                            <h5 class="user-name">Yuki Hayashi</h5>
+                            <h6 class="user-email">yuki@Maxwell.com</h6>
                         </div>
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
-                                    style="color:#2F8F9D">Address<span class="text-danger"> *</span></label> <input
-                                    type="text" id="job" name="delivery_address" placeholder="" onblur="validate(5)"> </div>
-                        </div>
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3"
-                                    style="color:#2F8F9D">Why do you want to be with us?<span class="text-danger">
-                                        *</span></label> <input type="text" id="ans" name="delivery_message" placeholder=""
-                                    onblur="validate(6)"> </div>
-                        </div>
-                        <div class="row justify-content-end">
-                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary"
-                                    style="color:white">Submit</button> </div>
-                        </div>
-                    </form>
-                
+
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+
+                            <h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
+                            <form method="POST" action="">
+
+                                @csrf
+
+
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                            class="form-control-label px-3" style="color:#2F8F9D">Name of the medical
+                                            equipment<span class="text-danger"> *</span></label> <input type="text"
+                                            id="job" name="delivery_address" placeholder="" onblur="validate(6)"> </div>
+                                </div>
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-12 flex-column d-flex"> <label
+                                            class="form-control-label px-3" style="color:#2F8F9D">Description<span
+                                                class="text-danger">
+                                                *</span></label> <textarea id="ans" name="delivery_message"
+                                            placeholder="" onblur="validate(7)"></textarea> </div>
+                                </div>
+                                <div class="row justify-content-between text-left">
+                                    <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                            class="form-control-label px-3" style="color:#2F8F9D">Image<span
+                                                class="text-danger"> *</span></label> <input type="file" id="job"
+                                            name="delivery_address" placeholder="" onblur="validate(5)"> 
+                                        </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="form-group col-sm-6"> <button type="submit" id="submit" name="submit"
+                                            class="btn" style="background-color:#51B7C6">Donate</button>
+                                        </div>
+                                </div>
+                            </form>
+                        </div>                         
+                    </div>
+                </div>    
+        </div>
     </div>
-</section>
+  
+</div>
+
+ <br><br>
+
+<style type="text/css">
+    body {
+        margin: 0;
+        padding-top: 40px;
+        color: #2e323c;
+        background: #f5f6fa;
+        position: relative;
+        height: 100%;
+    }
+
+    .account-settings .user-profile {
+        margin: 0 0 1rem 0;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+
+    .account-settings .user-profile .user-avatar {
+        margin: 0 0 1rem 0;
+    }
+
+    .account-settings .user-profile .user-avatar img {
+        width: 90px;
+        height: 90px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+    }
+
+    .account-settings .user-profile h5.user-name {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .account-settings .user-profile h6.user-email {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #9fa8b9;
+    }
+
+    .account-settings .about {
+        margin: 2rem 0 0 0;
+        text-align: center;
+    }
+
+    .account-settings .about h5 {
+        margin: 0 0 15px 0;
+        color: #007ae1;
+    }
+
+    .account-settings .about p {
+        font-size: 0.825rem;
+    }
+
+    .form-control {
+        border: 1px solid #cfd1d8;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        font-size: .825rem;
+        background: #ffffff;
+        color: #2e323c;
+    }
+
+    .card {
+        background: #ffffff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 0;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<script type="text/javascript">
+
+</script>
+
+
+
+{{-- <section>
+
+    <div class="container">
+
+        <div class="container-fluid px-1 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                    <h2 style="color:#2F8F9D">Add your donation here</h2>
+                    <div class="card">
+                        <form class="form-card" method="POST" action="#">
+                            @csrf
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3" style="color:#2F8F9D">Name of the medical
+                                        equipment<span class="text-danger"> *</span></label> <input type="text" id="job"
+                                        name="delivery_address" placeholder="" onblur="validate(6)"> </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-12 flex-column d-flex"> <label
+                                        class="form-control-label px-3" style="color:#2F8F9D">Description<span
+                                            class="text-danger">
+                                            *</span></label> <textarea id="ans" name="delivery_message" placeholder=""
+                                        onblur="validate(7)"></textarea> </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex"> <label
+                                        class="form-control-label px-3" style="color:#2F8F9D">Image<span
+                                            class="text-danger"> *</span></label> <input type="file" id="job"
+                                        name="delivery_address" placeholder="" onblur="validate(5)"> </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="form-group col-sm-6"> <button type="submit" id="submit" name="submit"
+                                        class="btn" style="background-color:#51B7C6">Donate</button></div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</section> --}}
 @endsection
