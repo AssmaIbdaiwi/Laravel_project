@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\User;
 class IndexxController extends Controller
 {
     public function index()
     {
-
-    // $data['products'] = Product::orderBy('id','desc')->get();  
+        $users = User::orderBy('id','desc')->paginate(5);
+      
 
     $categories= Category::orderBy('id','asc')->limit(8)->get();
 
@@ -18,7 +19,7 @@ class IndexxController extends Controller
     ->limit(4)
     ->get(['*']);
 // dd($products);
-    return view('indexx', compact('data','categories'));
+    return view('indexx', compact('data','categories','users'));
 
     }
 
