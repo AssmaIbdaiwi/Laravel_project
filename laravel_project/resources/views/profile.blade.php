@@ -12,10 +12,10 @@
 					<div class="account-settings">
 						<div class="user-profile">
 							<div class="user-avatar">
-								<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+							<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 							</div>
-							<h5 class="user-name">Yuki Hayashi</h5>
-							<h6 class="user-email">yuki@Maxwell.com</h6>
+							<h5 class="user-name">{{ Auth::user()->name }}</h5>
+							<h6 class="user-email">{{ Auth::user()->email}}</h6>
 						</div>
 
 					</div>
@@ -28,24 +28,33 @@
 				<div class="card-body">
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
+							<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6><br>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<form method="POST" action="{{route('profile.update',Auth::user()->id)}}">
 
 								@csrf
 								@method('PUT')
+								</div>
 								<div class="row gutters">
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-								<div class="form-group">
-									<label for="fullName">Full Name</label>
-									<input name="user_name" type="text" @foreach($data as $dates) value="{{ Auth::user()->name }}" @endforeach class class="form-control" id="fullName">
-								</div>
+							<div class="form-group">
+								<label for="name">Full Name</label>
+								<input type="text" @foreach($data as $dates) value="{{ Auth::user()->name }}" @endforeach class="form-control" id="eMail" name="user_name" >
+							</div>
 						</div>
+						
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="eMail">Email</label>
-								<input type="email" @foreach($data as $users) value="{{ $users->email}}" @endforeach class="form-control" id="eMail" name="user_email" disable>
+								<input type="email" @foreach($data as $users) value="{{ $users->email}}" @endforeach class="form-control" id="eMail" name="user_email" >
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+							<div class="form-group">
+								<label for="ciTy">Password</label>
+								<input type="password" class="form-control" id="ciTy" placeholder="Password"
+								value=""	name="password">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -54,31 +63,23 @@
 								<input type="text" value="{{$data[0]->phone}}" class="form-control" id="phone" name="user_mobile">
 							</div>
 						</div>
-				
-				
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="Street">Address</label>
-								<input type="text" class="form-control" id="Street" placeholder="Enter Street"
+								<input type="text" class="form-control" id="Street" 
 								value="{{$data[0]->user_address}}"	name="user_address">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
-								<label for="ciTy">Password</label>
-								<input type="password" class="form-control" id="ciTy" placeholder="Enter City"
-								value="{{$data[0]->password}}"	name="password">
-							</div>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-							<div class="form-group">
 								<label for="zIp">image</label>
-								<input type="text" value="{{$data[0]->user_image}}" class="form-control" id="zIp" placeholder="Zip Code"
+								<input type="file" value="{{$data[0]->user_image}}" class="form-control" id="zIp" placeholder="Zip Code"
 									name="user_image">
+									
 							</div>
 						</div>
 					</div>
-				</div>
+</div>
 					<div class="row gutters">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 							<div class="text-right">
@@ -92,7 +93,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 </div> <br><br>
 
 <style type="text/css">
