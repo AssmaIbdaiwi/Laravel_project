@@ -7510,7 +7510,8 @@ h1, h2, h3, h4, h5,
     font-size: 60px;
     color: #fff;
     line-height: 1.2;
-    font-weight: 400; }
+    font-weight: 400; 
+    background: #cbcccccf}
     @media (max-width: 991.98px) {
       .slider-text h1 {
         font-size: 40px; } }
@@ -7719,11 +7720,14 @@ h1, h2, h3, h4, h5,
     padding: 30px;
     color: rgba(0, 0, 0, 0.7); }
     .ftco-intro .block-18.color-1 {
-      background: #2F8F9D; }
+      background: #2F8F9D;
+    margin-top: 5%; }
     .ftco-intro .block-18.color-2 {
-      background: #82DBD8; }
+      background: #82DBD8; 
+      margin-top: 7%; }
     .ftco-intro .block-18.color-3 {
-      background: #B3E8E5; }
+      background: #B3E8E5; 
+      margin-top: 7%; }
     .ftco-intro .block-18 .text strong {
       font-size: 60px;
       color: #000;
@@ -8295,7 +8299,7 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 16px;
-  padding: 7em 0;
+  padding: 1em 0;
   background: #2F8F9D; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -8538,7 +8542,8 @@ textarea.form-control {
     .blog-entry {
       margin-bottom: 30px; } }
   .blog-entry .text {
-    position: relative; }
+    /* position: relative; */
+   }
     @media (min-width: 768px) {
       .blog-entry .text {
         width: 90%;
@@ -8588,7 +8593,9 @@ textarea.form-control {
     color: white; }
 
 .block-6 {
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+margin-top: 20%;
+}
   .block-6 .media-body p {
     font-size: 16px; }
 
