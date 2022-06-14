@@ -9,7 +9,7 @@
         <div class="card-header">
           <h4 class="card-title"> Messages</h4>
           <div class="pull-left">
-            <a class="btn btn-success" href="{{ route('message.create') }}"> Add New Message</a>
+            {{-- <a class="btn btn-success" href="{{ route('message.create') }}"> Add New Message</a> --}}
         </div>
         </div>
         <div class="card-body">
@@ -57,7 +57,7 @@
                  </td>
                   <td>
                     <form action=" {{ route('message.destroy',$message->id) }}" method="POST"> 
-                      <a class="btn btn-info" href="{{ route('message.edit',$message) }}">Edit</a>
+                      {{-- <a class="btn btn-info" href="{{ route('message.edit',$message) }}">Edit</a> --}}
                       @csrf
                       @method('DELETE')
                       

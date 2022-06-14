@@ -52,16 +52,16 @@ class adminUController extends Controller
             'password' => 'required',
             'location' => 'required',
             'mobile' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,jfif|max:2048'
             //'image' => 'required'
         ]);
-$fullName=$request->input('fname'.' '.'lfname');
+
 
         $user = new User();
         $userDetail = new User_Detail();
 
 
-        $user->name = $fullName;
+        $user->name = $request->input('fname');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $user->phone = $request->input('mobile');

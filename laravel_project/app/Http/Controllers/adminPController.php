@@ -51,7 +51,7 @@ class adminPController extends Controller
             'pname' => 'required',
             'pdescription' => 'required',
             'category'=>'required',
-            'image' =>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'image' =>'required|image|mimes:jpg,png,jpeg,gif,svg,jfif|max:2048'
         ]);
 
 

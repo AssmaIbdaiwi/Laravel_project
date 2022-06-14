@@ -42,7 +42,7 @@ class adminCController extends Controller
          $request->validate([
             'cname' => 'required',
             'cdescription' => 'required',
-            'image' =>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'image' =>'required|image|mimes:jpg,png,jpeg,gif,svg,jfif|max:2048'
         ]);
 
 
