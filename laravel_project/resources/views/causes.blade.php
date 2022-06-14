@@ -62,7 +62,7 @@
                   <h3>{{ $product->item_name }}</h3>
                   <p>{{ $product->item_description }}</p>
                   <span class="donation-time mb-3 d-block"></span>
-                  <span class="fund-raised d-block d-flex justify-content-center"><a href="/product/{{$product->id}}"><button type="button" class="btn btn-info">More Info</button></a></span>
+                  <span class="fund-raised d-block d-flex justify-content-center"><a href="/Causes-product/{{$product->id}}"><button type="button" class="btn btn-info">More Info</button></a></span>
                 </div>
               </div>
             </div>
