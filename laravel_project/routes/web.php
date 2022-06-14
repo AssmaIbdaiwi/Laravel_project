@@ -89,11 +89,11 @@ Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index']);
 
 
 //admin
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
-Route::resource('user', adminUController::class);
-Route::resource('category', adminCController::class);
-Route::resource('product', adminPController::class);
-Route::resource('order', adminOController::class);
-Route::resource('message', adminMController::class);
+// Route::get('/dashboard', function () {
+//     return view('admin.dashboard');
+// });
+// Route::resource('user', adminUController::class);
+// Route::resource('category', adminCController::class);
+// Route::resource('product', adminPController::class);
+// Route::resource('order', adminOController::class);
+// Route::resource('message', adminMController::class);
