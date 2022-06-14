@@ -20,4 +20,7 @@ class User_Detail extends Model
     {
       return $this->belongsTo(User::class);
     }
+
+
+    // protected $fillable = ['user_detail_id','user_name','user_email','password','user_image','user_address','user_mobile','admin_flag'];
 }
