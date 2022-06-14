@@ -151,7 +151,7 @@
         </div>
     </div>
 </div>
-
+{{-- @if($delivery->delivery_flag==2) --}}
 <section>
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
@@ -206,7 +206,7 @@
 </section>
 
 
-
+{{-- @else --}}
 <section class="ftco-section bg-light">
     <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
@@ -243,4 +243,5 @@
         </div>
     </div> 
         </section>
+        {{-- @endif --}}
 @endsection

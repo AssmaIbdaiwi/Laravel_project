@@ -1,7 +1,7 @@
 @extends('master') 
 @section('content')  
 <section style="overflow: hidden">
-<form action="/product/add/{{ $product->id; }}" style="margin:10% 0; ">
+<form action="/Causes-product/add/{{ $product->id; }}" style="margin:10% 0; ">
 <div class="row">
     <div class="col-10">
         <div class="row">

@@ -71,8 +71,8 @@ Route::get("/search", [CausesController::class , 'search']);
 
 route::get('/profile-requests' , [ProfileController::class , 'showRequests']);
 route::get('/profile-donations' , [ProfileController::class , 'showDonations']);
-Route::get("/product/{product}" , [ProductController::class , "index"]);
-Route::get("/product/add/{product}" , [ProductController::class , "add"]);
+Route::get("/Causes-product/{product}" , [ProductController::class , "index"]);
+Route::get("/Causes-product/add/{product}" , [ProductController::class , "add"]);
 Route::delete("delete-donation/{product}", [ProductController::class , "delete"]);
 route::delete("delete-request/{order}" , [OrderController::class , "delete"]);
 
