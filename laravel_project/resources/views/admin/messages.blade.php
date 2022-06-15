@@ -47,7 +47,7 @@
                     {{$message->id;}}
                   </td>
                   <td>
-                    {{$message->message_email;}}
+                   <address> <a href="mailto:{{$message->message_email;}}"> {{$message->message_email;}}</address>
                   </td>
                   <td >
                     {{$message->message;}}
