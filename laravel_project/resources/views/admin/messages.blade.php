@@ -25,6 +25,9 @@
                   ID
                 </th>
                 <th>
+                  Name
+                </th>
+                <th>
                    Email
                 </th>
                 <th>
@@ -46,6 +49,11 @@
                   <td>
                     {{$message->id;}}
                   </td>
+                  
+                    <td>
+                      {{$message->message_name;}}
+                    </td>
+                  
                   <td>
                    <address> <a href="mailto:{{$message->message_email;}}"> {{$message->message_email;}}</address>
                   </td>
@@ -57,7 +65,7 @@
                  </td>
                   <td>
                     <form action=" {{ route('message.destroy',$message->id) }}" method="POST"> 
-                      {{-- <a class="btn btn-info" href="{{ route('message.edit',$message) }}">Edit</a> --}}
+                      <a class="btn btn-info" href="mailto:{{$message->message_email;}}">Replay</a>
                       @csrf
                       @method('DELETE')
                       

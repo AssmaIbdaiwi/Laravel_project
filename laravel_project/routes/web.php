@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\adminUserController;
+
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CausesController;
 use App\Http\Controllers\DonateController;
@@ -13,10 +13,13 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\AddProfileController;
 use App\Http\Controllers\adminCController;
+use App\Http\Controllers\adminDController;
 use App\Http\Controllers\adminMController;
 use App\Http\Controllers\adminOController;
 use App\Http\Controllers\adminPController;
+use App\Http\Controllers\AdminSearchController;
 use App\Http\Controllers\adminUController;
+use App\Http\Controllers\ProductSearchController;
 use GuzzleHttp\Promise\Create;
 
 /*
@@ -101,5 +104,8 @@ Route::resource('category', adminCController::class);
 Route::resource('product', adminPController::class);
 Route::resource('order', adminOController::class);
 Route::resource('message', adminMController::class);
-Route::resource('message', adminMController::class);
+Route::resource('deliveryAdmin', adminDController::class);
 
+//adminSearch
+Route::get("/searchCategory", [AdminSearchController::class , 'SearchCat']);
+Route::get("/searchProduct", [ProductSearchController::class , 'productSearch']);

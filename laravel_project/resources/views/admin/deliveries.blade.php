@@ -7,9 +7,9 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title"> Users</h4>
+          <h4 class="card-title"> Deliveries</h4>
           <div class="pull-left">
-            <a class="btn btn-success" href="{{ route('user.create') }}"> Add New User</a>
+           
         </div>
         </div>
         <div class="card-body">
@@ -44,32 +44,32 @@
                 </th>
               </thead>
               <tbody>
-                @foreach ($users as $user)
+                @foreach ($deliveries as $delivery)
                   
                 
                 <tr>
                   <td>
-                    {{$user->id;}}
+                    {{$delivery->id;}}
                   </td>
                   {{-- <td>
                     <img src="  {{asset('public/adminImage/'.$user->user_image);}}" width="70px" height="70px" alt="Image">
                    
                   </td> --}}
                   <td>
-                    {{$user->name;}}
+                    {{$delivery->delivery_name;}}
                   </td>
                   <td >
-                    {{$user->email;}}
+                    {{$delivery->delivery_email;}}
                   </td>
                   <td >
-                    {{$user->location;}}
+                    {{$delivery->delivery_address;}}
                   </td>
                   <td >
-                    {{$user->phone;}}
+                    {{$delivery->delivery_mobile;}}
                   </td>
                   <td>
-                    <form action=" {{ route('user.destroy',$user->id) }}" method="POST"> 
-                      <a class="btn btn-info" href="{{ route('user.edit' ,$user->id) }}">Edit</a>
+                    <form action=" {{ route('delivery.destroy',$delivery->id) }}" method="POST"> 
+                      {{-- <a class="btn btn-info" href="{{ route('delivery.edit' ,$delivery->id) }}">Edit</a> --}}
                       @csrf
                       @method('DELETE')
                       

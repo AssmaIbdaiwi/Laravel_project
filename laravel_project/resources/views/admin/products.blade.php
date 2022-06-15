@@ -11,6 +11,20 @@
           <div class="pull-left">
             <a class="btn btn-success" href="{{ route('product.create') }}"> Add New Product</a>
         </div>
+        <div class="pull-right" style="padding-right: 70px; ">
+          <form action="/searchProduct"  method="get" role="search">
+          @csrf
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Search..." name="search">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <button type="submit" style="border: none; color:  #2F8F9D"><i class="now-ui-icons ui-1_zoom-bold"></i></button>
+                </div>
+              </div>
+            </div>
+          </form>
+       
+        </div>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -44,6 +58,7 @@
                 </th>
               </thead>
               <tbody>
+                @if(count($products) > 0)
                @foreach ($products as $product)
                   
                 
@@ -81,6 +96,9 @@
                   </td>
                 </tr>
                 @endforeach
+                @else <h5 style="color: #2F8F9D ">No Product found. Try to search again !</h5>
+
+                @endif
                 
               </tbody>
 

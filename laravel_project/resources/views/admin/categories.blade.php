@@ -1,16 +1,35 @@
 @extends('admin.master')
 @section('content')
 <div class="panel-header panel-header-sm">
+
 </div>
 <div class="content">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
+          
           <h4 class="card-title"> Catigories</h4>
+        
           <div class="pull-left">
             <a class="btn btn-success" href="{{ route('category.create') }}"> Add New Category</a>
+            
         </div>
+        <div class="pull-right" style="padding-right: 70px; ">
+          <form action="/searchCategory"  method="get" role="search">
+          @csrf
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Search..." name="search">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <button type="submit" style="border: none; color:  #2F8F9D"><i class="now-ui-icons ui-1_zoom-bold"></i></button>
+                </div>
+              </div>
+            </div>
+          </form>
+       
+        </div>
+        
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -39,6 +58,7 @@
                 </th>
               </thead>
               <tbody>
+                @if(count($categories) > 0)
                @foreach ($categories as $category)
                   
                 
@@ -69,7 +89,9 @@
                   </td>
                 </tr>
                 @endforeach
-                
+              @else <h5 style="color: #2F8F9D ">No Category found. Try to search again !</h5>
+
+              @endif
               </tbody>
 
             </table>

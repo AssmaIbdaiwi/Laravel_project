@@ -68,6 +68,12 @@
             </a>
           </li>
           <li>
+            <a href="/deliveryAdmin">
+              <i class="now-ui-icons shopping_delivery-fast"></i>
+              <p>Deliveries</p>
+            </a>
+          </li>
+          <li>
             <a href="/message">
               <i class="now-ui-icons ui-2_chat-round"></i>
               <p>Messages</p>
@@ -96,16 +102,7 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                  </div>
-                </div>
-              </div>
-            </form>
+         
             <ul class="navbar-nav">
           
               
@@ -114,6 +111,7 @@
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
+                    
                   </p>
                 </a>
               </li>

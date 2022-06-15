@@ -25,13 +25,13 @@
             <form action="{{route('contact.store')}}" method="POST">
               @csrf
               <div class="form-group">
-                <input type="text" class="form-control"name="message_name" placeholder="Name">
+                <input type="text" class="form-control"name="message_name" placeholder="Name" required>
               </div>
               <div class="form-group">
-                <input type="email" class="form-control" name="message_email"  placeholder="Email">
+                <input type="email" class="form-control" name="message_email"  placeholder="Email" required>
               </div>
               <div class="form-group">
-                <textarea id="" cols="30" rows="7" class="form-control" name="message"  placeholder="Message"></textarea>
+                <textarea id="" cols="30" rows="7" class="form-control" name="message"  placeholder="Message" required></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
