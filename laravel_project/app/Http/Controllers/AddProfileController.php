@@ -61,7 +61,7 @@ public function edit()
 public function store(Request $request)
 {
 
-    $request->file('item_image')->storeAs('public/image',$request->item_image->getClientOriginalName());
+    $request->file('item_image')->storeAs('storage/images/',$request->item_image->getClientOriginalName());
     
     $product = new Product();
     $product->donater_id=Auth::user()->id; 

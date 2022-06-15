@@ -125,7 +125,7 @@ class adminOController extends Controller
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('public/adminImage/', $filename);
+            $file->move('storage/images/', $filename);
             $order->order_image = $filename;
         }
 

@@ -67,7 +67,7 @@
                     {{$product->id;}}
                   </td>
                   <td >
-                    <img src="  {{asset('public/adminImage/'.$product->item_image);}}" width="70px" height="70px" alt="Image">
+                    <img src="  {{asset('storage/images/'.$product->item_image);}}" width="70px" height="70px" alt="Image">
                    
                   </td>
                   <td>
@@ -80,10 +80,7 @@
                   {{$product->category_name ;}}
                  </td>
                  <td>
-                  <select name="status">
-                    <option value="1">Accept</option>
-                    <option value="0">Reject</option>
-                  </select>
+                  {{$product->state ;}}
                  </td>
                   <td>
                     <form action=" {{ route('product.destroy',$product->id) }}" method="POST"> 

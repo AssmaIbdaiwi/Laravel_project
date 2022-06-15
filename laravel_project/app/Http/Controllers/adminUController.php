@@ -54,7 +54,7 @@ class adminUController extends Controller
             'password' => 'required',
             'location' => 'required',
             'mobile' => 'required|regex:/[07]{2,3}[7-9]{1,2}[0-9]{7,8}/|min:10',
-            //'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,jfif|max:2048'
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,jfif|max:2048'
             //'image' => 'required'
         ]);
 
@@ -69,13 +69,13 @@ class adminUController extends Controller
         $user->phone = $request->input('mobile');
         $user->location = $request->input('location');
 
-        // if ($request->hasfile('image')) {
-        //     $file = $request->file('image');
-        //     $extention = $file->getClientOriginalExtension();
-        //     $filename = time() . '.' . $extention;
-        //     $file->move('public/adminImage/', $filename);
-        //     $userDetail->user_image = $filename;
-        // }
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('storage/images/', $filename);
+            $user->image_name = $filename;
+        }
 
         // $userDetail->user_name = $request->input('fname') . ' ' . $request->input('lfname');
         // $userDetail->user_email = $request->input('email');
@@ -132,7 +132,7 @@ class adminUController extends Controller
             'password' => 'required',
             'location' => 'required',
             'mobile' => 'required',
-            //'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
             //'image' => 'required'
         ]);
         // $update=User::find($id);
@@ -144,14 +144,14 @@ class adminUController extends Controller
             'location' => $request->location
         ]);
 
-        // $userDetail = new User_Detail();
-        // if ($request->hasfile('image')) {
-        //     $file = $request->file('image');
-        //     $extention = $file->getClientOriginalExtension();
-        //     $filename = time() . '.' . $extention;
-        //     $file->move('public/adminImage/', $filename);
-        //     $userDetail->user_image = $filename;
-        // }
+        $user = new User();
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('public/adminImage/', $filename);
+            $user->image_name = $filename;
+        }
         // User_Detail::where('user_detail_id', $id)->update([
         //     'user_name' => $request->fname,
         //     'user_email' => $request->email,
