@@ -15,7 +15,7 @@ class IndexxController extends Controller
     $categories= Category::orderBy('id','asc')->limit(8)->get();
 
 
-    $data= Category::Join('products', 'products.item_category_id', '=', 'categories.id')
+    $data= Category::Join('products', 'products.item_category_id', '=', 'categories.id')->where ('state',1)
     ->limit(4)
     ->get(['*']);
 // dd($products);

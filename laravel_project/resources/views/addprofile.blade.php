@@ -220,7 +220,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="form-group col-sm-6">
-                                <button type="submit" id="submit" name="submit" class="btn" style="background-color:#51B7C6">Donate</button>
+                                <button type="submit" id="submit" name="submit" class="btn" style="background-color:#51B7C6;margin-left:100%">Donate</button>
                             </div>
                         </div>
                     </form>

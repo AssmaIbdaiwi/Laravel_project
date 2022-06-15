@@ -195,7 +195,7 @@
 			@foreach ($data as $product)
 			<div class="col-md-3 d-flex ftco-animate">
 				<div class="blog-entry align-self-stretch">
-					<a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('public/adminImage/' .$product->item_image) }}');">
+					<a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('storage/images/' .$product->item_image) }}');">
 					</a>
 					<div class="text p-4 d-block">
 						<div class="meta mb-3">

@@ -52,7 +52,7 @@
                     {{$product->id;}}
                   </td>
                   <td >
-                    <img src="  {{asset('public/adminImage/'.$product->item_image);}}" width="70px" height="70px" alt="Image">
+                    <img src="  {{asset('storage/images/'.$product->item_image);}}" width="70px" height="70px" alt="Image">
                    
                   </td>
                   <td>

@@ -19,11 +19,10 @@ class adminOController extends Controller
     
 
         $orders= Product::Join('orders', 'orders.product_order_id', '=', 'products.id')
-        ->join('users', 'users.id', '=', 'orders.user_order_id')
         ->get(['*']);
-   
+   $user=User::Join('orders', 'orders.user_order_id', '=', 'users.id') ->get(['*']);
     // dd($orders);
-        return view('admin.orders',compact('orders'))
+        return view('admin.orders',compact('orders','user'))
             ->with(request()->input('page'));    }
 
     /**
@@ -54,8 +53,8 @@ class adminOController extends Controller
 
 
          $order= new Order();
-
-         $order->product_order_id	=$request->input('product');
+         $order->state=1;
+         $order->product_order_id=$request->input('product');
          $order->user_order_id=$request->input('userName');
          
         $order->save();

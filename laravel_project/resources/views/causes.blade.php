@@ -57,7 +57,7 @@
             @endif
             <div class="col-md-4 ftco-animate mt-3">
               <div class="cause-entry">
-                <a class="img" style="background-image: url('{{ asset('images/' .$product->item_image) }}');"></a>
+                <a class="img" style="background-image: url('{{ asset('storage/images/' .$product->item_image) }}');"></a>
                 <div class="text p-3 p-md-4">
                   <h3>{{ $product->item_name }}</h3>
                   <p>{{ $product->item_description }}</p>
@@ -79,7 +79,7 @@
           @endif
             <div class="col-md-4 ftco-animate mt-3">
                 <div class="cause-entry">
-                  <a class="img" style="background-image: url('{{ asset('images/' .$product->item_image) }}');"></a>
+                  <a class="img" style="background-image: url('{{ asset('storage/images/' .$product->item_image) }}');"></a>
                   <div class="text p-3 p-md-4">
                     <h3>{{ $product->item_name }}</h3>
                     <p>{{ $product->item_description }}</p>
