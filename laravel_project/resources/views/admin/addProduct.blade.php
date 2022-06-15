@@ -44,13 +44,24 @@
               <div class="row">
                 <div class="col-md-6 pr-1">
                   <div class="form-group">
-                    <label>Category</label>
+                    <label>Category  </label>
                     <select class="form-select" aria-label="Default select example" name="category">
                         <option selected>Choose Category..</option>
                         @foreach ($categories as $category)
                         <option value="{{$category->id}}">{{$category->category_name}}</option>
                        @endforeach
                       </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 pr-1">
+                  <div class="form-group">
+                    <label>Status   </label>
+              <select class="form-select" aria-label="Default select example" name="status">
+                <option value="1">Accept</option>
+                <option value="0">Reject</option>
+              </select>
                   </div>
                 </div>
               </div>

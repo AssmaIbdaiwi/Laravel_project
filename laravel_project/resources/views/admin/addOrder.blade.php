@@ -24,7 +24,22 @@
 
           <form action="{{ route('order.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-           
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Order Name</label>
+                  <input type="text" class="form-control" placeholder="order name" name='oname'>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>Order Description</label>
+                  <textarea class="form-control" style="height:100px" name="odescription" placeholder="....."></textarea>
+                </div>
+              </div>
+            </div>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -53,12 +68,20 @@
             </div>
              
          
-        <div class="row">
-            
+         
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>Image</label>
+                <input type="file" class="form-control"  name='image'>
+              </div>
+            </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-left" style="padding-left: 40px">
             <button type="submit" class="btn btn-primary">Submit</button>
     </div>
        
+      </div>
+    </div>
       </div>
     </div>
   </div>

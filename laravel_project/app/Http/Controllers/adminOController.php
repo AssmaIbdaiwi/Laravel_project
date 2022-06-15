@@ -16,10 +16,13 @@ class adminOController extends Controller
      */
     public function index()
     {
-      
-        $orders= User::join('orders','orders.user_order_id','=','users.id')->
-        join('products','products.id','=','orders.product_order_id')->limit(10)->get(['*']);
-        
+    
+
+        $orders= Product::Join('orders', 'orders.product_order_id', '=', 'products.id')
+        ->join('users', 'users.id', '=', 'orders.user_order_id')
+        ->get(['*']);
+   
+    // dd($orders);
         return view('admin.orders',compact('orders'))
             ->with(request()->input('page'));    }
 

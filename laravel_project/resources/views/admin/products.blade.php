@@ -36,6 +36,9 @@
                 <th >
                     Category
                   </th>
+                  <th >
+                    Status
+                  </th>
                 <th >
                   Action
                 </th>
@@ -60,6 +63,12 @@
                   </td>
                  <td>
                   {{$product->category_name ;}}
+                 </td>
+                 <td>
+                  <select name="status">
+                    <option value="1">Accept</option>
+                    <option value="0">Reject</option>
+                  </select>
                  </td>
                   <td>
                     <form action=" {{ route('product.destroy',$product->id) }}" method="POST"> 
