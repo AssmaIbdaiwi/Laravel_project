@@ -112,7 +112,7 @@ class adminCController extends Controller
                 $file = $request->file('image');
                 $extention = $file->getClientOriginalExtension();
                 $filename = time() . '.' . $extention;
-                $file->move('public/adminImage/', $filename);
+                $file->move('storage/images/', $filename);
                 $category->category_image = $filename;
             }
 
@@ -139,4 +139,6 @@ class adminCController extends Controller
         return redirect()->route('category.index')
                         ->with('success','Category deleted successfully');
     }
+    
+    
 }

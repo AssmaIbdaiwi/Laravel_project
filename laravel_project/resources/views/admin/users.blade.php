@@ -52,9 +52,9 @@
                     {{$user->id;}}
                   </td>
                   <td>
-                    <img src="  {{asset('public/adminImage/'.$user->user_image);}}" width="70px" height="70px" alt="Image">
+                    <img src="  {{asset('storage/images/'.$user->image_name);}}" width="70px" height="70px" alt="Image">
                    
-                  </td>
+                  </td> 
                   <td>
                     {{$user->name;}}
                   </td>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\User_Detail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Hash as FacadesHash;
 
 class adminUController extends Controller
 {
@@ -15,11 +17,11 @@ class adminUController extends Controller
      */
     public function index()
     {
-        $users= User_Detail::Join('users', 'users.id', '=', 'user__details.user_detail_id')
-        ->get(['*']);
+        // $users= User_Detail::Join('users', 'users.id', '=', 'user__details.user_detail_id')
+        // ->get(['*']);
         // $users= User::leftJoin('user__details', 'user__details.	user_detail_id ', '=', 'users.id')
         // ->get(['*']);
-        // $users = User::latest()->paginate(20);
+         $users = User::latest()->paginate(20);
         // $userD=User::join('user__details','users.id','=','user__details.user_detail_id ');
         return view('admin.users', compact('users'))
             ->with(request()->input('page'));
@@ -51,19 +53,19 @@ class adminUController extends Controller
             'email' => 'required',
             'password' => 'required',
             'location' => 'required',
-            'mobile' => 'required',
+            'mobile' => 'required|regex:/[07]{2,3}[7-9]{1,2}[0-9]{7,8}/|min:10',
             'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg,jfif|max:2048'
             //'image' => 'required'
         ]);
 
 
         $user = new User();
-        $userDetail = new User_Detail();
+        // $userDetail = new User_Detail();
 
 
         $user->name = $request->input('fname');
         $user->email = $request->input('email');
-        $user->password = $request->input('password');
+        $user->password = Hash::make($request['password']);
         $user->phone = $request->input('mobile');
         $user->location = $request->input('location');
 
@@ -71,21 +73,21 @@ class adminUController extends Controller
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('public/adminImage/', $filename);
-            $userDetail->user_image = $filename;
+            $file->move('storage/images/', $filename);
+            $user->image_name = $filename;
         }
 
-        $userDetail->user_name = $request->input('fname') . ' ' . $request->input('lfname');
-        $userDetail->user_email = $request->input('email');
-        $userDetail->password = $request->input('password');
-        $userDetail->user_mobile = $request->input('mobile');
-        $userDetail->user_address = $request->input('location');
+        // $userDetail->user_name = $request->input('fname') . ' ' . $request->input('lfname');
+        // $userDetail->user_email = $request->input('email');
+        // $userDetail->password = $request->input('password');
+        // $userDetail->user_mobile = $request->input('mobile');
+        // $userDetail->user_address = $request->input('location');
        
         $user->save();
 
-        $userDetail->user_detail_id = $user->id;
+        // $userDetail->user_detail_id = $user->id;
 
-        $userDetail->save();
+        // $userDetail->save();
 
 
         return redirect()->route('user.index')->with('success', 'User added successfully.');
@@ -142,22 +144,22 @@ class adminUController extends Controller
             'location' => $request->location
         ]);
 
-        $userDetail = new User_Detail();
+        $user = new User();
         if ($request->hasfile('image')) {
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
             $file->move('public/adminImage/', $filename);
-            $userDetail->user_image = $filename;
+            $user->image_name = $filename;
         }
-        User_Detail::where('user_detail_id', $id)->update([
-            'user_name' => $request->fname,
-            'user_email' => $request->email,
-            'password' => $request->password,
-            'user_mobile' => $request->mobile,
-            'user_address' => $request->location,
-            'user_image' => $userDetail->user_image
-        ]);
+        // User_Detail::where('user_detail_id', $id)->update([
+        //     'user_name' => $request->fname,
+        //     'user_email' => $request->email,
+        //     'password' => $request->password,
+        //     'user_mobile' => $request->mobile,
+        //     'user_address' => $request->location,
+        //     'user_image' => $userDetail->user_image
+        // ]);
 
 
 

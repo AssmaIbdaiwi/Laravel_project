@@ -7,9 +7,9 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title"> Messages</h4>
+          <h4 class="card-title"> Deliveries</h4>
           <div class="pull-left">
-            {{-- <a class="btn btn-success" href="{{ route('message.create') }}"> Add New Message</a> --}}
+           
         </div>
         </div>
         <div class="card-body">
@@ -24,48 +24,52 @@
                 <th>
                   ID
                 </th>
+                {{-- <th>
+                  Image
+                </th> --}}
                 <th>
                   Name
                 </th>
-                <th>
-                   Email
+                <th >
+                  Email
                 </th>
-                <th>
-                   Message
+                <th >
+                  Address
                 </th>
-                <th>
-                   Date
+                <th >
+                  Mobile Number
                 </th>
-                
                 <th >
                   Action
                 </th>
               </thead>
               <tbody>
-               @foreach ($messages as $message)
+                @foreach ($deliveries as $delivery)
                   
                 
                 <tr>
                   <td>
-                    {{$message->id;}}
+                    {{$delivery->id;}}
                   </td>
-                  
-                    <td>
-                      {{$message->message_name;}}
-                    </td>
-                  
+                  {{-- <td>
+                    <img src="  {{asset('public/adminImage/'.$user->user_image);}}" width="70px" height="70px" alt="Image">
+                   
+                  </td> --}}
                   <td>
-                   <address> <a href="mailto:{{$message->message_email;}}"> {{$message->message_email;}}</address>
+                    {{$delivery->delivery_name;}}
                   </td>
                   <td >
-                    {{$message->message;}}
+                    {{$delivery->delivery_email;}}
                   </td>
-                 <td>
-                  {{$message->created_at ;}}
-                 </td>
+                  <td >
+                    {{$delivery->delivery_address;}}
+                  </td>
+                  <td >
+                    {{$delivery->delivery_mobile;}}
+                  </td>
                   <td>
-                    <form action=" {{ route('message.destroy',$message->id) }}" method="POST"> 
-                      <a class="btn btn-info" href="mailto:{{$message->message_email;}}">Replay</a>
+                    <form action=" {{ route('delivery.destroy',$delivery->id) }}" method="POST"> 
+                      {{-- <a class="btn btn-info" href="{{ route('delivery.edit' ,$delivery->id) }}">Edit</a> --}}
                       @csrf
                       @method('DELETE')
                       

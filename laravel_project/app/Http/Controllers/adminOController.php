@@ -47,16 +47,29 @@ class adminOController extends Controller
     {
         $request->validate([
             'userName' => 'required',
-            'product' => 'required'
+            'product' => 'required',
+            'oname'=>'required',
+            'odescription'=>'required',
             
         ]);
 
 
          $order= new Order();
-         $order->state=1;
          $order->product_order_id=$request->input('product');
          $order->user_order_id=$request->input('userName');
+         $order->order_name=$request->input('oname');
+         $order->order_description=$request->input('odescription');
          
+
+         if($request->hasfile('image'))
+         {
+             $file = $request->file('image');
+             $extention = $file->getClientOriginalExtension();
+             $filename = time().'.'.$extention;
+             $file->move('public/adminImage/', $filename);
+             $order->order_image = $filename;
+         }
+
         $order->save();
 
 
@@ -82,7 +95,10 @@ class adminOController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::where('id', $id)->first();
+        $users=User::all();
+        $products=Product::all();
+        return view('admin.editOrder',compact('order','users','products'));
     }
 
     /**
@@ -94,7 +110,35 @@ class adminOController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'userName' => 'required',
+            'product' => 'required',
+            'oname'=>'required',
+            'odescription'=>'required',
+            
+        ]);
+
+        $order = new Order();
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extention;
+            $file->move('storage/images/', $filename);
+            $order->order_image = $filename;
+        }
+
+        Order::where('id',$id)->update([
+            'order_name'=>$request->oname,
+            'order_description'=>$request->odescription,
+            'order_image'=> $order->order_image,
+            'product_order_id'=>$request->product,
+            'product_user_id'=>$request->userName,
+        ]);
+        
+         return redirect()->route('order.index')->with('success','Order edited successfully.');
+
+
+        
     }
 
     /**
@@ -105,6 +149,10 @@ class adminOController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Order::find($id);
+        $delete->delete();
+        return redirect()->route('order.index')
+                        ->with('success','Order deleted successfully');
+    
     }
 }

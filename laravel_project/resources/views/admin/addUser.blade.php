@@ -88,7 +88,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12 text-left" style="padding-left: 40px">
             <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-       
+        </div>
+      </div>
       </div>
     </div>
   </div>

@@ -96,7 +96,7 @@ class ProfileController extends Controller
         $account->location=$request->input('user_address');
         
         $account->image_name=$request->image_name->getClientOriginalName();
-        $account->image_path= $request->file('image_name')->storeAs('public/images',$request->image_name->getClientOriginalName());
+        $account->image_path= $request->file('image_name')->storeAs('storage/images',$request->image_name->getClientOriginalName());
         $account->update();
 
         // $dataUserDetails=User_Detail::where('user_detail_id','=',Auth::user()->id)->get();

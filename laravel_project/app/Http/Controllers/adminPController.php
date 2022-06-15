@@ -67,13 +67,13 @@ class adminPController extends Controller
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'.$extention;
-            $file->move('public/adminImage/', $filename);
+            $file->move('storage/images/', $filename);
             $product->item_image = $filename;
         }
        
        // $product->status =$request->input('status');
             $product->item_category_id =$request->input('category');
-            // $product->state =$request->input('status');
+            $product->state =$request->input('status');
         $product->save();
 
 
@@ -125,7 +125,7 @@ class adminPController extends Controller
             $file = $request->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extention;
-            $file->move('public/adminImage/', $filename);
+            $file->move('storage/images/', $filename);
             $product->user_image = $filename;
         }
 
@@ -134,7 +134,7 @@ class adminPController extends Controller
             'item_description'=>$request->pdescription,
             'item_image'=>  $product->user_image,
             'item_category_id'=>$request->category,
-           // 'status'=>$request->status
+           'state'=>$request->status
         ]);
         
          return redirect()->route('product.index')->with('success','Product updateded successfully.');

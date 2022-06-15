@@ -65,7 +65,7 @@ class CausesController extends Controller
             $type = "search";
             return view("/causes" , compact('pages_number' , 'pages' , 'categories' , 'type'));
     }
-    
+
 }
 
 
