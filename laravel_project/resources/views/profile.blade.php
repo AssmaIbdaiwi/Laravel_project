@@ -2,6 +2,11 @@
 @section('content')
 
 <br><br><br>
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+<p>{{ $message }}</p>
+</div>
+@endif
 <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist" >
   <li class="nav-item" role="presentation" >
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><a href="{{url('profile')}}">Profile</a></button>
@@ -24,8 +29,8 @@
 				<div class="card-body">
 					<div class="account-settings">
 						<div class="user-profile">
-							<div class="user-avatar">
-								<img src="{{ Auth::user()->url_img }}" alt="Maxwell Admin">
+							<div class="user-avatar"  >
+								<img src="{{asset('storage/images/'.Auth::user()->image_name)}}" alt="">
 							</div>
 							<h5 class="user-name">{{ Auth::user()->name }}</h5>
 							<h6 class="user-email">{{ Auth::user()->email}}</h6>
@@ -44,7 +49,7 @@
 							<h6 class="mb-2" style="color:#51B7C6">Personal Details</h6><br>
 						</div>
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<form method="POST" action="{{route('profile.update',Auth::user()->id)}}">
+							<form method="POST" action="{{route('profile.update',Auth::user()->id)}}"enctype="multipart/form-data">
 
 								@csrf
 								@method('PUT')
@@ -53,14 +58,14 @@
 								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="name">Full Name</label>
-								<input type="text" @foreach($data as $dates) value="{{ Auth::user()->name }}" @endforeach class="form-control" id="eMail" name="user_name" >
+								<input type="text" value="{{ Auth::user()->name }}" class="form-control" id="eMail" name="user_name" >
 							</div>
 						</div>
 						
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="eMail">Email</label>
-								<input type="email" @foreach($data as $users) value="{{ $users->email}}" @endforeach class="form-control" id="eMail" name="user_email" >
+								<input type="email" value="{{ Auth::user()->email}}"  class="form-control" id="eMail" name="user_email" >
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -73,21 +78,21 @@
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="phone">Phone</label>
-								<input type="text" value="{{$data[0]->phone}}" class="form-control" id="phone" name="user_mobile">
+								<input type="text" value="{{Auth::user()->phone}}" class="form-control" id="phone" name="user_mobile">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="Street">Address</label>
 								<input type="text" class="form-control" id="Street" 
-								value="{{$data[0]->user_address}}"	name="user_address">
+								value="{{Auth::user()->user_address}}"	name="user_address">
 							</div>
 						</div>
 						<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 							<div class="form-group">
 								<label for="zIp">image</label>
-								<input type="file" value="{{$data[0]->user_image}}" class="form-control" id="zIp" placeholder="Zip Code"
-									name="user_image">
+								<input type="file" value="{{ Auth::user()->image_path, Auth::user()->image_name}}" class="form-control" id="zIp" placeholder="Zip Code"
+									name="image_name">
 									
 							</div>
 						</div>

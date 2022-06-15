@@ -195,18 +195,18 @@
 			@foreach ($data as $product)
 			<div class="col-md-3 d-flex ftco-animate">
 				<div class="blog-entry align-self-stretch">
-					<a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('images/' .$product->item_image) }}');">
+					<a href="blog-single.html" class="block-20" style="background-image: url('{{ asset('public/adminImage/' .$product->item_image) }}');">
 					</a>
 					<div class="text p-4 d-block">
 						<div class="meta mb-3">
-							<div><a href="#">**********************</a></div>
+							<div><a style="color:white" href="#" >**********************</a></div>
 							<div><a href="#"></a></div>
 							<div><a href="#" class="meta-chat"><span class=""></span> </a></div>
 						</div>
 						<h3 class="heading mb-4"><a href="#">{{ $product->item_name}}</a></h3>
 						<p class="time-loc"><span class="mr-2"></i> {{$product->category_name}}</span></p>
 						<p>{{ $product->item_description }}</p>
-						<p><a href="/product/{{$product->id}}">See more <i class="ion-ios-arrow-forward"></i></a></p>
+						<p><a href="/Causes-product/{{$product->id}}">See more <i class="ion-ios-arrow-forward"></i></a></p>
 					</div>
 				</div>
 			</div>

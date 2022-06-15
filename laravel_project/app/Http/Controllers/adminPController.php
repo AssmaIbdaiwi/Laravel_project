@@ -60,7 +60,8 @@ class adminPController extends Controller
 
          $product->item_name=$request->input('pname');
          $product->item_description=$request->input('pdescription');
-         
+         $product->donater_id=1;
+         $product->state=1;
         if($request->hasfile('image'))
         {
             $file = $request->file('image');
@@ -72,7 +73,7 @@ class adminPController extends Controller
        
        // $product->status =$request->input('status');
             $product->item_category_id =$request->input('category');
-         
+            // $product->state =$request->input('status');
         $product->save();
 
 

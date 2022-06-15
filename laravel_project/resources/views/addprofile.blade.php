@@ -166,7 +166,7 @@
                     <div class="account-settings">
                         <div class="user-profile">
                             <div class="user-avatar">
-								<img src="{{ Auth::user()->url_img }}" alt="Maxwell Admin">
+								<img src="{{asset('storage/images/'.Auth::user()->image_name)}}" alt="">
                             </div>
 							<h5 class="user-name">{{ Auth::user()->name }}</h5>
 							<h6 class="user-email" style="font-size: 0.788rem;">{{ Auth::user()->email }}</h6>
@@ -179,22 +179,35 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h6 class="mb-2" style="color:#51B7C6">Personal Details</h6>
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('addprofile.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label class="form-control-label px-3" style="color:#2F8F9D">Name of the medical equipment
                                     <span class="text-danger"> *</span>
                                 </label>
-                                <input type="text" id="job" name="delivery_address" placeholder="" onblur="validate(6)">
+                                <input type="text" id="job" name='item_name' placeholder="" onblur="validate(6)">
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6 pr-1">
+                              <div class="form-group">
+                                <label>Category  </label>
+                                <select class="form-select" aria-label="Default select example" name="category">
+                                    <option selected>Choose Category..</option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                   @endforeach
+                                  </select>
+                              </div>
+                            </div>
+                          </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-12 flex-column d-flex"> 
                                 <label class="form-control-label px-3" style="color:#2F8F9D">Description
                                     <span class="text-danger">*</span>
                                 </label> 
-                                <textarea id="ans" name="delivery_message" placeholder="" onblur="validate(7)"></textarea>
+                                <textarea id="ans" name="item_description" placeholder="" onblur="validate(7)"></textarea>
                             </div>
                         </div>
                         <div class="row justify-content-between text-left">
@@ -202,7 +215,7 @@
                                 <label class="form-control-label px-3" style="color:#2F8F9D">Image
                                     <span class="text-danger"> *</span>
                                 </label>
-                                <input type="file" id="job"name="delivery_address" placeholder="" onblur="validate(5)"> 
+                                <input type="file" id="job" name="item_image" placeholder="" onblur="validate(5)"> 
                             </div>
                         </div>
                         <div class="row justify-content-center">
