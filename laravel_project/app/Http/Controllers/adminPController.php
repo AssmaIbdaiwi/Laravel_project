@@ -51,7 +51,8 @@ class adminPController extends Controller
             'pname' => 'required',
             'pdescription' => 'required',
             'category'=>'required',
-            'image' =>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'status'=>'required',
+            'image' =>'required|image|mimes:jpg,png,jpeg,gif,svg,jfif|max:2048'
         ]);
 
 
@@ -70,7 +71,7 @@ class adminPController extends Controller
             $product->item_image = $filename;
         }
        
-        
+       // $product->status =$request->input('status');
             $product->item_category_id =$request->input('category');
             // $product->state =$request->input('status');
         $product->save();
@@ -116,6 +117,7 @@ class adminPController extends Controller
             'pname' => 'required',
             'pdescription' => 'required',
             'category'=>'required',
+            'status'=>'required',
             'image' =>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
         ]);
         $product = new Product();
@@ -131,7 +133,8 @@ class adminPController extends Controller
             'item_name'=>$request->pname,
             'item_description'=>$request->pdescription,
             'item_image'=>  $product->user_image,
-            'item_category_id'=>$request->category
+            'item_category_id'=>$request->category,
+           // 'status'=>$request->status
         ]);
         
          return redirect()->route('product.index')->with('success','Product updateded successfully.');

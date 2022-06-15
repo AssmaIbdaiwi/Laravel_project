@@ -28,7 +28,7 @@
   --dark: #343a40;
 
   /* ****** */
- --main-color1: #2F8F9D;
+ --main-color1: orange;
     --main-color2: #3BACB6;
   --main-color3: #82DBD8;
     --main-color4: #373636;
@@ -4957,7 +4957,7 @@ button.close {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #2F8F9D !important; }
+  background-color: orange !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
@@ -7303,7 +7303,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #2F8F9D; }
+  color: orange; }
   a:hover {
     text-decoration: none;
     color: #2F8F9D; }
@@ -7681,7 +7681,7 @@ h1, h2, h3, h4, h5,
     -ms-border-radius: 0;
     border-radius: 0; }
     .btn.btn-white:hover {
-      border: 1px solid #2F8F9D;
+      border: 1px solid orange;
       background: #82DBD8;
       color: #fff; }
     .btn.btn-white.btn-outline-white {
@@ -7696,7 +7696,7 @@ h1, h2, h3, h4, h5,
       .btn.btn-white.btn-outline-white:hover, .btn.btn-white.btn-outline-white:focus, .btn.btn-white.btn-outline-white:active {
         background: #fff;
         border-color: #fff;
-        color: #2F8F9D; }
+        color: orange; }
   .btn.btn-outline-black {
     border-color: black;
     background: none;
@@ -8260,7 +8260,7 @@ textarea.form-control {
   visibility: hidden; }
 
 .bg-primary {
-  background: #2F8F9D !important; }
+  background: orange !important; }
 
 .ftco-section .ftco-sub-title {
   font-size: 16px;
@@ -8558,7 +8558,7 @@ textarea.form-control {
       .blog-entry .text .heading a {
         color: #000; }
         .blog-entry .text .heading a:hover, .blog-entry .text .heading a:focus, .blog-entry .text .heading a:active {
-          color: #2F8F9D; }
+          color: orange; }
     .blog-entry .text .time-loc {
       font-size: 14px; }
       .blog-entry .text .time-loc span {
@@ -8750,7 +8750,7 @@ margin-top: 20%;
       border: 1px solid #B3E8E5; }
     .block-27 ul li.active a, .block-27 ul li.active span {
       background: #B3E8E5;
-      color: #2F8F9D;
+      color: orange;
       border: 1px solid transparent; }
 
 .block-8 .accordion-item .heading {
@@ -8843,7 +8843,7 @@ margin-top: 20%;
       background: #f86f2d; }
 
 .contact-section .contact-info p a {
-  color: #2F8F9D; }
+  color: orange; }
 
 .contact-section .contact-info p span {
   color: #000; }

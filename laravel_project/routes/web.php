@@ -2,6 +2,7 @@
 use App\Http\Controllers\DeliveryOrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\adminUserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CausesController;
 use App\Http\Controllers\DonateController;
@@ -17,6 +18,8 @@ use App\Http\Controllers\adminMController;
 use App\Http\Controllers\adminOController;
 use App\Http\Controllers\adminPController;
 use App\Http\Controllers\adminUController;
+use GuzzleHttp\Promise\Create;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +57,7 @@ Route::get('/contact', function () {
 // Route::get('/profile', function () {
 //     return view('profile');
 // });
+
 
 Route::resource('indexx', IndexxController::class);
 Route::middleware('auth')->group(function() {
@@ -101,3 +105,5 @@ Route::resource('category', adminCController::class);
 Route::resource('product', adminPController::class);
 Route::resource('order', adminOController::class);
 Route::resource('message', adminMController::class);
+Route::resource('message', adminMController::class);
+

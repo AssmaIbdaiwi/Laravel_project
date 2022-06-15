@@ -44,7 +44,7 @@
               <div class="row">
                 <div class="col-md-6 pr-1">
                   <div class="form-group">
-                    <label>Category</label>
+                    <label>Category  </label>
                     <select class="form-select" aria-label="Default select example" name="category">
                         <option selected>Choose Category..</option>
                         @foreach ($categories as $category)

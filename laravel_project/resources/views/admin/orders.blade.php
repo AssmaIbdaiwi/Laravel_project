@@ -46,7 +46,7 @@
                     {{$order->id;}}
                   </td>  
                   <td>
-                    {{$order->user_name;}}
+                    {{$order->name;}}
                   </td>
                   <td >
                     {{$order->item_name;}}

@@ -64,7 +64,7 @@
               <div class="row">
                 <div class="col-md-6 pr-1">
                   <div class="form-group">
-                    <label>Location</label>
+                    <label>Address</label>
                     <input type="text" class="form-control" placeholder="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" name='location'>
                   </div>
                 </div>

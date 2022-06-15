@@ -114,7 +114,7 @@
 }
 .icon-clock-o:before {
   content: "\f017";
-  color:#2F8F9D;
+  color:orange;
 }
 .icon-road:before {
   content: "\f018";
@@ -278,7 +278,7 @@
 }
 .icon-play:before {
   content: "\f04b";
-  color:#2F8F9D;
+  color:orange;
 }
 .icon-pause:before {
   content: "\f04c";
@@ -2034,7 +2034,7 @@
 }
 .icon-map-o:before {
   content: "\f278";
-  color:#2F8F9D;
+  color:orange;
 }
 .icon-map:before {
   content: "\f279";
