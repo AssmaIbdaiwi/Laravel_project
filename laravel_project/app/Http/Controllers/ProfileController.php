@@ -70,40 +70,45 @@ class ProfileController extends Controller
 }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         
         // $this->validate($request,[
-        //     'user_detail_id' => 'required',
-        //     'user_name' => 'required',
-        //     'user_email' =>'required',
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'phone' =>'required',
         //     'password' => 'required',
-        //     'user_image' => 'required',
-        //     'user_address' => 'required',
-        //     'user_mobile' => 'required',
-        //     'admin_flag' => 'required',
+        //     'location' => 'required',
+        //     'image_name' => 'required',
+          
+   
         //   ]);
 
-        $account=User::findOrFail(Auth::user()->id);
+        ;
+
+        $account = User::find(Auth::user()->id);;
         $account->name=$request->input('user_name');
         $account->email=$request->input('user_email');
 
         $account->password=Hash::make($request->input('password'));
 
         $account->phone=$request->input('user_mobile');
-
+        $account->location=$request->input('user_address');
+        
+        $account->image_name=$request->image_name->getClientOriginalName();
+        $account->image_path= $request->file('image_name')->storeAs('public/images',$request->image_name->getClientOriginalName());
         $account->update();
 
-        $dataUserDetails=User_Detail::where('user_detail_id','=',Auth::user()->id)->get();
+        // $dataUserDetails=User_Detail::where('user_detail_id','=',Auth::user()->id)->get();
     
-        $updateUserDetailes=User_Detail::findOrFail($dataUserDetails[0]->id);
-        $updateUserDetailes->user_detail_id=Auth::user()->id;
-        $updateUserDetailes->user_image=$request->input('user_image');
-        $updateUserDetailes->admin_flag=1;
-        $updateUserDetailes->user_address=$request->input('user_address');
-        $updateUserDetailes->update();
+        // $updateUserDetailes=User_Detail::findOrFail($dataUserDetails[]->id);
+        // $updateUserDetailes->user_detail_id=Auth::user()->id;
+        // $updateUserDetailes->user_image=$request->input('user_image');
+        // $updateUserDetailes->admin_flag=1;
+        // $updateUserDetailes->user_address=$request->input('user_address');
+        // $updateUserDetailes->update();
 
         return redirect('profile') 
-        ->with('success','Movie Has Been updated successfully');
+        ->with('success','Profile Has Been updated successfully');
     }
 }

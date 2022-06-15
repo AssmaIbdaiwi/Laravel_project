@@ -25,7 +25,7 @@
 					<div class="account-settings">
 						<div class="user-profile">
 							<div class="user-avatar">
-								<img src="{{ Auth::user()->url_img }}" alt="Maxwell Admin">
+								<img src="{{asset('storage/images/'.Auth::user()->image_name)}}" alt="">
 							</div>
 							<h5 class="user-name">{{ Auth::user()->name }}</h5>
 							<h6 class="user-email">{{ Auth::user()->email }}</h6>

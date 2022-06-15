@@ -23,6 +23,8 @@ return new class extends Migration
             $table->tinyInteger('role_as')->default('0');
             $table->unsignedBigInteger('phone')->nullable();
             $table->string('location')->nullable();
+            $table->string('image_name')->nullable();
+            $table->string('image_path')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
