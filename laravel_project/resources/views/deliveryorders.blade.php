@@ -22,7 +22,7 @@
                             <h3 class="heading mb-4"><a href="#">{{ $order->item_name }}</a></h3>
                             <p>{{ $order->item_description }}</p>
                             <p>         
-                             <form action="{{ route('delivery.destroy',$order->id) }}" method="Post">
+                             <form action="{{ route('deliveryorders.destroy',$order->id) }}" method="Post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"  class="btn-block btn-primary" style="color:white">Deliver</button>

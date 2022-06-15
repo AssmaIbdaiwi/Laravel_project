@@ -26,7 +26,10 @@ class DeliveryOrderController extends Controller
 
     return view('deliveryorders', compact('data','orders'));
 }
-
+public function create()
+{
+return view('deliveryorders');
+}
 public function store(Request $request)
 {
 
@@ -53,6 +56,6 @@ return redirect()->route('deliveryorders.store')
        
     $order=Order::find($id);
     $order->delete();
-    return redirect('/deliveryorders')->with('success','Movie has been deleted successfully');
+    return redirect('/deliveryorders')->with('success','Donation has been delivered successfully');
     }
 }

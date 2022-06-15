@@ -66,6 +66,7 @@ Route::resource('delivery', DeliveryController::class);});
 Route::resource('contact',ContactController::class);
 Route::resource('profile',ProfileController::class);
 Route::resource('addprofile',AddProfileController::class);
+
 Route::resource('deliveryorders', DeliveryOrderController::class);
 
 
