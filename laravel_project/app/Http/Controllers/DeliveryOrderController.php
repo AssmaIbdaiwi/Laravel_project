@@ -5,11 +5,12 @@ use App\Models\Delivery;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class DeliveryController extends Controller
+class DeliveryOrderController extends Controller
 {
+
     public function index()
     {
  $orders= Product::Join('orders', 'orders.product_order_id', '=', 'products.id')
@@ -23,19 +24,8 @@ class DeliveryController extends Controller
     ->get(['*']); 
 
 
-    return view('delivery', compact('data','orders'));
+    return view('deliveryorders', compact('data','orders'));
 }
-
-
-
-
-
-public function create()
-{
-return view('delivery');
-}
-
-
 
 public function store(Request $request)
 {
@@ -58,7 +48,11 @@ return redirect()->route('deliveryorders.store')
 
 
 
-
-
-
+    public function destroy($id)
+    {
+       
+    $order=Order::find($id);
+    $order->delete();
+    return redirect('/deliveryorders')->with('success','Movie has been deleted successfully');
+    }
 }

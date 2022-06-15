@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\DeliveryOrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
@@ -55,11 +56,14 @@ Route::get('/contact', function () {
 // });
 
 Route::resource('indexx', IndexxController::class);
-Route::resource('delivery', DeliveryController::class);
+Route::middleware('auth')->group(function() {
+Route::resource('delivery', DeliveryController::class);});
 // Route::resource('donate', DonateController::class);
 Route::resource('contact',ContactController::class);
 Route::resource('profile',ProfileController::class);
 Route::resource('addprofile',AddProfileController::class);
+Route::resource('deliveryorders', DeliveryOrderController::class);
+
 
 Route::get('/causes' , [CausesController::class, 'index']);
 Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory']);
@@ -88,12 +92,12 @@ Route::get('profile',[App\Http\Controllers\ProfileController::class, 'index']);
 
 
 
-//admin
-// Route::get('/dashboard', function () {
-//     return view('admin.dashboard');
-// });
-// Route::resource('user', adminUController::class);
-// Route::resource('category', adminCController::class);
-// Route::resource('product', adminPController::class);
-// Route::resource('order', adminOController::class);
-// Route::resource('message', adminMController::class);
+// admin
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+Route::resource('user', adminUController::class);
+Route::resource('category', adminCController::class);
+Route::resource('product', adminPController::class);
+Route::resource('order', adminOController::class);
+Route::resource('message', adminMController::class);

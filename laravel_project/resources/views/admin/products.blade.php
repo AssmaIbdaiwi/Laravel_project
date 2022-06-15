@@ -36,6 +36,9 @@
                 <th >
                     Category
                   </th>
+                  <th >
+                    Status
+                  </th>
                 <th >
                   Action
                 </th>
@@ -61,9 +64,16 @@
                  <td>
                   {{$product->category_name ;}}
                  </td>
+                 <td>
+                  <select name="status">
+                    <option value="1">Accept</option>
+                    <option value="0">Reject</option>
+                  </select>
+                 </td>
                   <td>
                     <form action=" {{ route('product.destroy',$product->id) }}" method="POST"> 
                       <a class="btn btn-info" href="{{ route('product.edit',$product->id) }}">Edit</a>
+
                       @csrf
                       @method('DELETE')
                       

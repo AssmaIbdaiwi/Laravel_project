@@ -151,7 +151,8 @@
         </div>
     </div>
 </div>
-{{-- @if($delivery->delivery_flag==2) --}}
+
+
 <section>
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
@@ -159,14 +160,14 @@
                 <h1 style="color:#2F8F9D">Be a volunteer</h1>
                 <div class="card">
                     <h5 class="text-center mb-4" style="color:#2F8F9D">Registration form</h5>
-                    <form class="form-card"  method="POST" action="{{route('delivery.store')}}">
+                    <form class="form-card"  method="POST" action="{{route('deliveryorders.store')}}">
                         @csrf
                         
                         <div class="row justify-content-between text-left">
 
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
                                     style="color:#2F8F9D">First name<span class="text-danger"> </span></label> <input
-                                    type="text" id="fname" name="delivery_name" @foreach($data as $dates) placeholder="  {{ Auth::user()->name }}" @endforeach
+                                    type="text" id="fname" name="delivery_name" @foreach($data as $dates) value="  {{ Auth::user()->name }}" @endforeach
                                     onblur="validate(1)" disabled> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
                                     style="color:#2F8F9D">Last name<span class="text-danger"> *</span></label> <input
@@ -176,7 +177,7 @@
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
                                     style="color:#2F8F9D">Email<span class="text-danger"> </span></label> <input
-                                    type="text" id="email" name="delivery_email"@foreach($data as $users) placeholder="{{ $users->email}}" @endforeach onblur="validate(3)" disabled>
+                                    type="text" id="email" name="delivery_email"@foreach($data as $users) value="{{ $users->email}}" @endforeach onblur="validate(3)" disabled>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3"
                                     style="color:#2F8F9D">Phone number<span class="text-danger"> *</span></label> <input
@@ -195,7 +196,7 @@
                         </div>
                         <div class="row justify-content-end">
                             <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary"
-                                    style="color:white">Submit</button> </div>
+                                    style="color:white" >Submit</button> </div>
                         </div>
                     </form>
                 
@@ -206,42 +207,6 @@
 </section>
 
 
-{{-- @else --}}
-<section class="ftco-section bg-light">
-    <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section ftco-animate text-center">
-                    <h2 class="mb-4"  style="color:#2F8F9D">Voluntary medical equipment delivery</h2>
-                </div>
-            </div>
-            
-            <div class="row">
-                @foreach ($orders as $order)
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="blog-entry align-self-stretch">
-                        <a href="blog-single.html" class="block-20" style="background-image: url('images/event-1.jpg');">
-                        </a>
-                        <div class="text p-4 d-block">
-                            <h3 class="heading mb-4"><a href="#">{{ $order->item_name }}</a></h3>
-                            <p>{{ $order->item_description }}</p>
-                            <p>         
-                             <form action="{{ route('delivery.destroy',$order->id) }}" method="Post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"  class="btn-block btn-primary" style="color:white">Deliver</button>
-                                </form>
-                            
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                @endforeach
-            </div>
-        
-
-        </div>
-    </div> 
-        </section>
-        {{-- @endif --}}
+    
 @endsection
