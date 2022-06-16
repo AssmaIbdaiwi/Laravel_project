@@ -16,6 +16,7 @@ class IndexxController extends Controller
 
 
     $data= Category::Join('products', 'products.item_category_id', '=', 'categories.id')->where ('state',1)
+    ->where('products.status','=','wait') 
     ->limit(4)
     ->get(['*']);
 // dd($products);

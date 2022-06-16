@@ -4,7 +4,7 @@
 
 
       
-    <div class="hero-wrap" style="background-image:url('https://www.apdk.org/wp-content/uploads/2015/10/wheelchairs.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image:url('https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/05/GettyImages-1184019336_header-1024x575.jpg?w=1155&h=1528');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <form class="form-inline" style="display: flex;justify-content: center;align-items: center;margin-top: 5%;" action="/search">
+    <form class="form-inline" style="display: flex;justify-content: flex-end;align-items: center;margin-top: 5%;margin-right:5%" action="/search">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="height: auto" name="search">
       <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search">
     </form>
@@ -79,7 +79,7 @@
           @endif
             <div class="col-md-4 ftco-animate mt-3">
                 <div class="cause-entry">
-                  <a class="img" style="background-image: url('{{ asset('storage/images/' .$product->item_image) }}');"></a>
+                  <a class="img"  style="background-image: url('{{ asset('storage/images/' .$product->item_image) }}');"></a>
                   <div class="text p-3 p-md-4">
                     <h3>{{ $product->item_name }}</h3>
                     <p>{{ $product->item_description }}</p>

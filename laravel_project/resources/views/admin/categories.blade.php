@@ -67,7 +67,7 @@
                     {{$category->id;}}
                   </td>
                   <td >
-                    <img src="  {{asset('storage/images/'.$category->category_image);}}" width="70px" height="70px" alt="Image">
+                    <img src="  {{asset('public/adminImage/'.$category->category_image);}}" width="70px" height="70px" alt="Image">
                    
                   </td>
                   <td>

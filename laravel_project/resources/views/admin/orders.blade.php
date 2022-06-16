@@ -9,7 +9,7 @@
         <div class="card-header">
           <h4 class="card-title"> Orders</h4>
           <div class="pull-left">
-            <a class="btn btn-success" href="{{ route('order.create') }}"> Add New Order</a>
+            {{-- <a class="btn btn-success" href="{{ route('order.create') }}"> Add New Order</a> --}}
         </div>
         </div>
         <div class="card-body">

@@ -16,6 +16,7 @@ public function index()
     $categories= Category::orderBy('id','asc')->get();
 
     $products= Category::Join('products', 'products.item_category_id', '=', 'categories.id')
+      
     ->get(['*']);
     
     return view('addprofile',compact('products','categories'));

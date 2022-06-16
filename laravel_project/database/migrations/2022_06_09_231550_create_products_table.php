@@ -28,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->foreign('donater_id')->on('users')->references('id')
             ->onDelete('CASCADE')
             ->onUpdate('CASCADE');
+            $table->enum('status',['wait','done'])->default('wait');
         });
     }
 

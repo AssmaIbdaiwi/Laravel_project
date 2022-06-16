@@ -4199,7 +4199,10 @@ input[type="button"].btn-block {
   -ms-flex-direction: column;
   flex-direction: column;
   padding-left: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  border-style: solid;
+  border-color: lightgrey ;
+}
 
 .list-group-item-action {
   width: 100%;
@@ -7712,7 +7715,7 @@ h1, h2, h3, h4, h5,
       color: #fff; }
 
 .ftco-intro {
-  margin-top: -80px; }
+  margin-top: -150px; }
   .ftco-intro.ftco-intro-2 {
     margin-top: 0 !important; }
   .ftco-intro .block-18 {
@@ -7768,7 +7771,10 @@ h1, h2, h3, h4, h5,
   border-radius: 4px; }
   .cause-entry .img {
     display: block;
-    height: 300px; }
+    height: 400px; 
+    margin-left: 10%;
+  
+  }
   @media (min-width: 768px) {
     .cause-entry .text {
       margin-top: -40px !important;

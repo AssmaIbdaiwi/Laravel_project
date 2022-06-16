@@ -17,14 +17,16 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedInteger('product_order_id');
             $table->unsignedInteger('user_order_id');
-            $table->string("state");
+            $table->string("state")->nullable();
             $table->timestamps();
             $table->foreign('product_order_id')->on('products')->references('id')
             ->onDelete('CASCADE')
-            ->onUpdate('CASCADE');
+            ->onUpdate('CASCADE')
+            ;
             $table->foreign('user_order_id')->on('users')->references('id')
             ->onDelete('CASCADE')
             ->onUpdate('CASCADE');
+            $table->enum('status',['wait','done'])->default('wait');
         });
     }
 

@@ -16,13 +16,13 @@ class adminOController extends Controller
      */
     public function index()
     {
-    
 
-        $orders= Product::Join('orders', 'orders.product_order_id', '=', 'products.id')
-        ->get(['*']);
-   $user=User::Join('orders', 'orders.user_order_id', '=', 'users.id') ->get(['*']);
-    // dd($orders);
-        return view('admin.orders',compact('orders','user'))
+        $orders= Order::Join('users' ,'orders.user_order_id','=','users.id')
+        ->Join('products','orders.product_order_id' ,'=','products.id')
+        ->get(['orders.id' ,'users.name', 'products.item_name','orders.created_at']);
+
+    // dd($orders[0]);
+        return view('admin.orders',compact('orders'))
             ->with(request()->input('page'));    }
 
     /**
@@ -45,13 +45,13 @@ class adminOController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'userName' => 'required',
-            'product' => 'required',
-            'oname'=>'required',
-            'odescription'=>'required',
+        // $request->validate([
+        //     'userName' => 'required',
+        //     'product' => 'required',
+        //     'oname'=>'required',
+        //     'odescription'=>'required',
             
-        ]);
+        // ]);
 
 
          $order= new Order();
@@ -113,7 +113,7 @@ class adminOController extends Controller
         $request->validate([
             'userName' => 'required',
             'product' => 'required',
-            'oname'=>'required',
+            // 'oname'=>'required',
             'odescription'=>'required',
             
         ]);
@@ -128,7 +128,7 @@ class adminOController extends Controller
         }
 
         Order::where('id',$id)->update([
-            'order_name'=>$request->oname,
+            // 'order_name'=>$request->oname,
             'order_description'=>$request->odescription,
             'order_image'=> $order->order_image,
             'product_order_id'=>$request->product,

@@ -7,11 +7,11 @@
         <div class="row">
             <div class="col-7 ftco-animate mt-3">
                 <div class="cause-entry">
-                <a class="img" style="background-image: url('{{ asset('images/' .$product->item_image) }}');"></a>
+                <a class="img" style="background-image: url('{{ asset('storage/images/' .$product->item_image) }}');"></a>
 
                 </div>
             </div>
-            <div class="col-5" style="display: flex; justify;align-items: flex-start;justify-content: center;flex-direction: column;">
+            <div class="col-5" style="display: flex; justify;align-items: center;justify-content: center;flex-direction: column;">
                 <div><h3>{{ $product->item_name }}</h3></div>
                 <div><p>{{ $product->item_description }}</p></div>
                 @if (Auth::check())
@@ -28,6 +28,7 @@
             </div>
         </div>
 </div>
+
 </form>
 </section>
 

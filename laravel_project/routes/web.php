@@ -57,14 +57,16 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-// Route::get('/profile', function () {
-//     return view('profile');
+// Route::get('/causes', function () {
+//     return view('causes');
 // });
 
 
 Route::resource('indexx', IndexxController::class);
+
 Route::middleware('auth')->group(function() {
 Route::resource('delivery', DeliveryController::class);});
+
 // Route::resource('donate', DonateController::class);
 Route::resource('contact',ContactController::class);
 Route::resource('profile',ProfileController::class);
@@ -72,6 +74,7 @@ Route::resource('addprofile',AddProfileController::class);
 
 Route::resource('deliveryorders', DeliveryOrderController::class);
 
+Route::get('/causes' , [CausesController::class, 'index']);
 
 Route::get('/causes' , [CausesController::class, 'index']);
 Route::get("/causes/{category}", [CausesController::class , 'ShowProductCategory']);
@@ -80,8 +83,9 @@ Route::get("/search", [CausesController::class , 'search']);
 
 route::get('/profile-requests' , [ProfileController::class , 'showRequests']);
 route::get('/profile-donations' , [ProfileController::class , 'showDonations']);
+Route::middleware('auth')->group(function() {
 Route::get("/Causes-product/{product}" , [ProductController::class , "index"]);
-Route::get("/Causes-product/add/{product}" , [ProductController::class , "add"]);
+Route::get("/Causes-product/add/{product}" , [ProductController::class , "add"]);});
 Route::delete("delete-donation/{product}", [ProductController::class , "delete"]);
 route::delete("delete-request/{order}" , [OrderController::class , "delete"]);
 
