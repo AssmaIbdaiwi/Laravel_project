@@ -35,11 +35,11 @@
             @foreach ($categories as $category)
               <a href="/causes/{{$category->id}}#product_section" class="list-group-item list-group-item-action px-3 border-0" aria-current="true">
                 {{ $category->category_name }}</a>
+                
             @endforeach
             </div>
           </div>
         </div>
-
         @if (count($pages) != 0)
           
         <div class="col-10">
@@ -48,6 +48,7 @@
             @if (!isset($_GET["page"]))
             @foreach ( $pages[0] as $product )
             @if ($product->state == "pending" || $product->state == "refused")
+            {{ dd($product) }}
               @if (count($pages) == 1)
                 <div class="col-10">
                 <h1>There is no Items</h1>
@@ -70,12 +71,6 @@
             @else
             @foreach ($pages[$_GET["page"] - 1] as $product)
             @if ($product->state == "pending" || $product->state == "Refused")
-            @if (count($pages) == 1)
-              <div class="col-10">
-              <h1>There is no Items</h1>
-              </div>
-            @endif
-            @continue
           @endif
             <div class="col-md-4 ftco-animate mt-3">
                 <div class="cause-entry">

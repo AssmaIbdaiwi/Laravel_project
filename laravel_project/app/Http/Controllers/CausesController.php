@@ -14,11 +14,11 @@ class CausesController extends Controller
 {
 
     public function index(){
-        // $products = Product::all();
-        $products= Category::Join('products', 'products.item_category_id', '=', 'categories.id')->where ('state',1)
-        ->where('products.status','=','wait') 
-   
-        ->get(['*']);
+        $products = Product::all();
+        // $products= Category::Join('products', 'products.item_category_id', '=', 'categories.id')->where ('state',1)
+        // ->where('products.status','=','wait') 
+        // ->get(['*']);
+
         $categories = Category::all();
         $item_per_page = 6;
         $pages_number = ceil(count($products) / $item_per_page);
